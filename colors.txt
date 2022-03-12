@@ -1,2 +1,3 @@
+Világos téma(kékes) : 219, 237, 251(legvilágosabb) ; 126, 165, 198(közepes); 43, 65, 88(legsötétebb)
 Sötét téma: 35, 35, 35 ; 226, 175, 68 ; 223, 142, 57 ;
 Világos téma: 38, 49, 80 ; 207, 219, 233 ; fehér
