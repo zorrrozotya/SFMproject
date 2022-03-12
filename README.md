@@ -4,7 +4,7 @@
 
 ## Github repo használata:
 A Trello táblát [itt](https://trello.com/b/n0FfYfjf/szoftver-fejleszt%C3%A9s) lehet megnézni. 
-1. letöltjük a repositoryt ```git clone https://github.com/zorrrozotya/SFMproject.git``` Frissítéshez: git pull parancs.
+1. letöltjük a repositoryt ```git clone https://github.com/zorrrozotya/SFMproject.git``` Frissítéshez: ```git pull``` parancs.
 2. A Trelloról kiválasztasz egy feladatot.
 3. Csinálsz egy új branchet a github felületén aminek a nevében benne van az adott kártya neve amit választottál pl.: ```feature/card-2-implement-proper-main-menu```.
 4. A terminálba ```git checkout "branch neve"``` azzal lépsz be az új branchbe és ezzel a parancsal is lehet visszalépni. 
