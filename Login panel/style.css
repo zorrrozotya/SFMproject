@@ -36,10 +36,6 @@
 }
 
 .tab:selected .focus-indicator{
-<<<<<<< HEAD
-    -fx-focus-color:none;
-}
-=======
     -fx-focus-color:transparent;
 }
 
@@ -49,4 +45,3 @@
     -fx-alignment: center-left;
     -fx-font-size: 25px;
 }
->>>>>>> ad82e0e (valami)
