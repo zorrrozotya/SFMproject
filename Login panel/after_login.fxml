@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
-
+<?import javafx.scene.text.Font?>
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #232323;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
@@ -34,10 +35,22 @@
             </Tab>
          </tabs>
       </TabPane>
-      <ImageView fitHeight="103.0" fitWidth="128.0" layoutX="8.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="124.0" fitWidth="192.0" layoutX="-20.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@MovieLogo.png" />
          </image>
       </ImageView>
+      <Button layoutX="32.0" layoutY="287.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="77.0" style="-fx-background-color: gray; -fx-border-color: #df8e39; -fx-border-width: 5px;" textAlignment="CENTER">
+         <font>
+            <Font name="Serif Bold" size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="51.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@log_out.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
    </children>
 </Pane>
