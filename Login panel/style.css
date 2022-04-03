@@ -23,8 +23,8 @@
     -fx-background-color:rgb(223, 142, 57);
     -fx-background-radius: 0;
     -fx-backround-insets: 0;
-    -fx-border-width: 5 0 0 0;
-    -fx-border-color: gray;
+    -fx-border-width: 0 0 5 0;
+    -fx-border-color: #232323;
 }
 
 .tab:focused{
