@@ -36,5 +36,12 @@
 }
 
 .tab:selected .focus-indicator{
-    -fx-focus-color:none;
+    -fx-focus-color:transparent;
+}
+
+.label{
+    -fx-border-color: rgb(223, 142, 57);
+    -fx-background-color:rgb(223, 142, 57);
+    -fx-alignment: center-left;
+    -fx-font-size: 25px;
 }
