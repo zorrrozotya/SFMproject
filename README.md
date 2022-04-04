@@ -14,4 +14,4 @@ A Trello táblát [itt](https://trello.com/b/n0FfYfjf/szoftver-fejleszt%C3%A9s) 
 8. Feltölteni githubra ``` git push origin "branch neve"```
 9. A github felületén nyitsz egy új pull requestet és ha valaki elfogadja akkor lehet mergelni
 10. Saját branched legfrissebb masterre frissítése:
-  VS code editorban csináld hogy a conflict feloldás ne legyen szívás = beíroda a project mappájában a cmd-be hogy ```code .``` majd ```git checkout master``` majd ```git pull``` majd ```git checkout saját-branched``` majd ```git rebase -i master``` aztán bezárod a filet feloldod a conflictokat(accept incoming change)majd ```git add .``` és ```git rebase --continue``` és kész is van :D
+  VS code editorban csináld hogy a conflict feloldás ne legyen szívás = beíroda a project mappájában a cmd-be hogy ```code .``` majd ```git checkout master``` majd ```git pull``` majd ```git checkout saját-branched``` majd ```git rebase -i master``` aztán bezárod a filet feloldod a conflictokat(accept incoming change)majd ```git add .``` és ```git rebase --continue``` és kész is van :D  Vagy kiadod ezt a parancsot mikor a saját brach-ben vagy ```git merge origin/master```.
