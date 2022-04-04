@@ -13,6 +13,8 @@ public class User {
     private Integer id;
     private String userName;
     private String password;
+    private int seensum;
+    private int screentime;
 
     public Integer getId() {
         return id;
@@ -38,4 +40,19 @@ public class User {
         this.password = password;
     }
 
+    public int getSeensum() {
+        return seensum;
+    }
+
+    public void setSeensum(int seensum) {
+        this.seensum = seensum;
+    }
+
+    public int getScreentime() {
+        return screentime;
+    }
+
+    public void setScreentime(int screentime) {
+        this.screentime = screentime;
+    }
 }

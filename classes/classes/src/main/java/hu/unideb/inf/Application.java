@@ -18,11 +18,34 @@ public class Application {
         //try with resources
         try (UserDAO uDAO =new JpaUserDao();){
             User a=new User();
+            User b=new User();
+            User c=new User();
+            User d=new User();
 
 
-            a.setUserName("Jani");
-            a.setPassword("alma");
+            a.setUserName("Zsollesz");
+            a.setPassword("alma123");
+            a.setSeensum(3);
+            a.setScreentime(10);
             uDAO.saveUser(a);
+
+            b.setUserName("Tomcsa");
+            b.setPassword("kukc12");
+            b.setSeensum(2);
+            b.setScreentime(5);
+            uDAO.saveUser(b);
+
+            c.setUserName("Szabesz");
+            c.setPassword("helo2342");
+            c.setSeensum(3);
+            c.setScreentime(7);
+            uDAO.saveUser(c);
+
+            d.setUserName("Zollee");
+            d.setPassword("anya<3");
+            d.setSeensum(1);
+            d.setScreentime(3);
+            uDAO.saveUser(d);
 
 
         } catch (Exception e) {

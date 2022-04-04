@@ -13,6 +13,7 @@ public class Movies {
     private String Title;
     private int Length;
     private int genre;
+    private String About;
 
 
     public Integer getId() {
@@ -45,5 +46,21 @@ public class Movies {
 
     public void setEpisodes(int episodes) {
         this.genre = episodes;
+    }
+
+    public int getGenre() {
+        return genre;
+    }
+
+    public void setGenre(int genre) {
+        this.genre = genre;
+    }
+
+    public String getAbout() {
+        return About;
+    }
+
+    public void setAbout(String about) {
+        About = about;
     }
 }
