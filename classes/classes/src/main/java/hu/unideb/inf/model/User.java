@@ -3,6 +3,8 @@ package hu.unideb.inf.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Entity
@@ -15,6 +17,8 @@ public class User {
     private String password;
     private int seensum;
     private int screentime;
+
+    private List<User> users = new ArrayList<>();
 
     public Integer getId() {
         return id;
@@ -30,6 +34,7 @@ public class User {
 
     public void setUserName(final String userName) {
         this.userName = userName;
+
     }
 
     public String getPassword() {
@@ -58,16 +63,26 @@ public class User {
 
     public void User_Register(String name, String password)
     {
-        try (UserDAO uDAO =new JpaUserDao();)
+        try (UserDAO uDAO =new JpaUserDao())
         {
-
-            // már felhasznált felhasználónévvel történő regisztráció tiltása
-            
             User user = new User();
-            user.userName=name;
-            user.password=password;
-            uDAO.saveUser(user);
-        } catch (Exception e) {
+            // már felhasznált felhasználónévvel történő regisztráció tiltás
+            for (int i = 0; i<=users.size(); i++)
+            {
+                if (users.get(i).userName.equals(name))
+                {
+                    // controllernek küldés, hogy már van ilyen felhasználó
+                }
+                else
+                {
+                    user.userName=name;
+                    user.password=password;
+                    uDAO.saveUser(user);
+                    users.add(user);
+                }
+            }
+
+        } catch (Exception e){
             e.printStackTrace();
         }
 
