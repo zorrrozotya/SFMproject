@@ -18,7 +18,7 @@ public class User {
     private int seensum;
     private int screentime;
 
-    List<User> users = new ArrayList<>();
+    private List<User> users = new ArrayList<>();
 
     public Integer getId() {
         return id;
@@ -63,7 +63,7 @@ public class User {
 
     public void User_Register(String name, String password)
     {
-        try (UserDAO uDAO =new JpaUserDao();)
+        try (UserDAO uDAO =new JpaUserDao())
         {
             User user = new User();
             // már felhasznált felhasználónévvel történő regisztráció tiltás
@@ -81,7 +81,8 @@ public class User {
                     users.add(user);
                 }
             }
-        } catch (Exception e) {
+
+        } catch (Exception e){
             e.printStackTrace();
         }
 
