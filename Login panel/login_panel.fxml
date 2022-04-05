@@ -13,7 +13,6 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-
 <TabPane fx:id="tabpanelogin" stylesheets="@login.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <tabs>
       <Tab closable="false" text="Register">
@@ -36,14 +35,14 @@
                                           <Font name="Serif Bold" size="28.0" />
                                        </font>
                                     </Label>
-                                    <TextField layoutX="157.0" layoutY="146.0" promptText="Username" style="-fx-background-color: -;" />
-                                    <PasswordField layoutX="158.0" layoutY="187.0" promptText="Password" />
-                                    <Button layoutX="149.0" layoutY="240.0" mnemonicParsing="false" style="-fx-background-color: #ea950c;" text="Register">
+                                    <TextField fx:id="usernameText" layoutX="157.0" layoutY="146.0" promptText="Username" style="-fx-background-color: -;" />
+                                    <PasswordField fx:id="passwordText" layoutX="158.0" layoutY="187.0" promptText="Password" />
+                                    <Button fx:id="RegisterButton" layoutX="149.0" layoutY="240.0" mnemonicParsing="false" onAction="#HandleRegisterButton" style="-fx-background-color: #ea950c;" text="Register">
                                        <font>
                                           <Font name="System Bold" size="15.0" />
                                        </font>
                                     </Button>
-                                    <Label contentDisplay="CENTER" layoutX="150.0" layoutY="96.0" textFill="RED">
+                                    <Label fx:id="ErrorRegText" contentDisplay="CENTER" layoutX="150.0" layoutY="96.0" textFill="RED">
                                        <font>
                                           <Font name="Serif Regular" size="20.0" />
                                        </font>
@@ -94,14 +93,14 @@
                                     <Font name="Serif Bold" size="28.0" />
                                  </font>
                               </Label>
-                              <TextField layoutX="157.0" layoutY="146.0" promptText="Username" style="-fx-background-color: -;" />
-                              <PasswordField layoutX="158.0" layoutY="187.0" promptText="Password" />
-                              <Button layoutX="149.0" layoutY="240.0" mnemonicParsing="false" style="-fx-background-color: #ea950c;" text="Log In">
+                              <TextField fx:id="LoginNameText" layoutX="157.0" layoutY="146.0" promptText="Username" style="-fx-background-color: -;" />
+                              <PasswordField fx:id="LoginPasswordText" layoutX="158.0" layoutY="187.0" promptText="Password" />
+                              <Button fx:id="LogInButton" layoutX="149.0" layoutY="240.0" mnemonicParsing="false" onAction="#HandleLogInButoon" style="-fx-background-color: #ea950c;" text="Log In">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font>
                               </Button>
-                              <Label layoutX="168.0" layoutY="114.0" textFill="RED">
+                              <Label fx:id="ErrorLogText" layoutX="168.0" layoutY="114.0" textFill="RED">
                                  <font>
                                     <Font size="20.0" />
                                  </font>
