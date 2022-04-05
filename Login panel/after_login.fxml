@@ -4,26 +4,27 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #232323;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="720.0" style="-fx-background-color: #232323;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <TabPane fx:id="tabpane" layoutX="136.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="464.0" style="-fx-background-color: #232323;" stylesheets="@style.css" tabClosingPolicy="UNAVAILABLE">
+      <TabPane fx:id="tabpane" layoutX="136.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="584.0" style="-fx-background-color: #232323;" stylesheets="@style.css" tabClosingPolicy="UNAVAILABLE">
          <tabs>
             <Tab text="Követés">
                <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="330.0" prefWidth="502.0" style="-fx-background-color: gray;" stylesheets="@style.css">
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="330.0" prefWidth="353.0" style="-fx-background-color: gray;" styleClass="AnchorPane" stylesheets="@style.css">
                      <children>
                         <Label fx:id="msg" layoutX="14.0" layoutY="24.0" prefHeight="42.0" prefWidth="60.0" stylesheets="@style.css" text="Cím">
                            <font>
                               <Font size="25.0" />
                            </font>
                         </Label>
-                        <Label fx:id="msg1" layoutX="109.0" layoutY="25.0" prefHeight="40.0" prefWidth="231.0" stylesheets="@style.css" text="Adatok">
+                        <Label fx:id="msg1" layoutX="105.0" layoutY="22.0" prefHeight="46.0" prefWidth="237.0" style="-fx-border-radius: 25;" stylesheets="@style.css" text="Adatok">
                            <font>
                               <Font size="25.0" />
                            </font>
@@ -33,12 +34,23 @@
             </Tab>
             <Tab text="Keresés">
                <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: gray;" />
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="410.0" prefWidth="558.0" style="-fx-background-color: gray;" />
                </content>
             </Tab>
             <Tab text="Hozzáadás">
                <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: gray;" />
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: gray;" stylesheets="@style.css">
+                     <children>
+                        <AnchorPane layoutX="114.0" layoutY="47.0" prefHeight="315.0" prefWidth="321.0" styleClass="AnchorPane" stylesheets="@style.css">
+                           <children>
+                              <TextField fx:id="FilmGenre" layoutX="14.0" layoutY="132.0" prefHeight="26.0" prefWidth="209.0" promptText="Műfaj" />
+                              <TextField fx:id="FilmDescription" alignment="TOP_LEFT" layoutX="13.0" layoutY="185.0" prefHeight="62.0" prefWidth="222.0" promptText="Leírás" />
+                              <TextField fx:id="FilmName" layoutX="14.0" layoutY="89.0" prefHeight="26.0" prefWidth="198.0" promptText="Név" />
+                              <Button fx:id="AddButton" layoutX="117.0" layoutY="269.0" mnemonicParsing="false" onAction="#handleAddButton" prefHeight="31.0" prefWidth="88.0" text="hozzáad" />
+                           </children>
+                        </AnchorPane>
+                        <Label layoutX="127.0" layoutY="58.0" prefHeight="54.0" prefWidth="295.0" stylesheets="@style.css" text="Add meg a sorozat adatait" />
+                     </children></AnchorPane>
                </content>
             </Tab>
             <Tab text="Eltávolítás">

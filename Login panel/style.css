@@ -44,4 +44,10 @@
     -fx-background-color:rgb(223, 142, 57);
     -fx-alignment: center-left;
     -fx-font-size: 25px;
+    -fx-border-radius: 40px;
+}
+
+.AnchorPane{
+    -fx-background-color:rgb(226, 175, 68);
+    -fx-border-radius: 25px;
 }
