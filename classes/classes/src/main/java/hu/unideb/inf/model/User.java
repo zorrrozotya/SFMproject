@@ -55,4 +55,22 @@ public class User {
     public void setScreentime(int screentime) {
         this.screentime = screentime;
     }
+
+    public void User_Register(String name, String password)
+    {
+        try (UserDAO uDAO =new JpaUserDao();)
+        {
+
+            // már felhasznált felhasználónévvel történő regisztráció tiltása
+            
+            User user = new User();
+            user.userName=name;
+            user.password=password;
+            uDAO.saveUser(user);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+    }
 }
