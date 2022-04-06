@@ -41,21 +41,40 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: gray;" stylesheets="@style.css">
                      <children>
-                        <AnchorPane layoutX="114.0" layoutY="47.0" prefHeight="315.0" prefWidth="321.0" styleClass="AnchorPane" stylesheets="@style.css">
+                        <AnchorPane layoutX="131.0" layoutY="47.0" prefHeight="315.0" prefWidth="321.0" styleClass="AnchorPane" stylesheets="@style.css">
                            <children>
-                              <TextField fx:id="FilmGenre" layoutX="14.0" layoutY="132.0" prefHeight="26.0" prefWidth="209.0" promptText="Műfaj" />
+                              <TextField fx:id="FilmGenre" layoutX="12.0" layoutY="138.0" prefHeight="26.0" prefWidth="209.0" promptText="Műfaj" />
                               <TextField fx:id="FilmDescription" alignment="TOP_LEFT" layoutX="13.0" layoutY="185.0" prefHeight="62.0" prefWidth="222.0" promptText="Leírás" />
                               <TextField fx:id="FilmName" layoutX="14.0" layoutY="89.0" prefHeight="26.0" prefWidth="198.0" promptText="Név" />
-                              <Button fx:id="AddButton" layoutX="117.0" layoutY="269.0" mnemonicParsing="false" onAction="#handleAddButton" prefHeight="31.0" prefWidth="88.0" text="hozzáad" />
+                              <Button fx:id="AddButton" layoutX="117.0" layoutY="269.0" mnemonicParsing="false" onAction="#handleAddButton" prefHeight="31.0" prefWidth="88.0" style="-fx-background-color: #df8e39; -fx-border-color: black; -fx-border-radius: 20px; -fx-background-radius: 20px;" text="Hozzáad">
+                                 <font>
+                                    <Font name="Serif Bold" size="15.0" />
+                                 </font></Button>
+                              <Label layoutX="13.0" layoutY="14.0" prefHeight="54.0" prefWidth="295.0" style="-fx-alignment: center;" stylesheets="@style.css" text="Add meg a film adatait">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Label>
                            </children>
                         </AnchorPane>
-                        <Label layoutX="127.0" layoutY="58.0" prefHeight="54.0" prefWidth="295.0" stylesheets="@style.css" text="Add meg a sorozat adatait" />
                      </children></AnchorPane>
                </content>
             </Tab>
             <Tab text="Eltávolítás">
                <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: gray;" />
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: gray;">
+                     <children>
+                        <AnchorPane layoutX="131.0" layoutY="47.0" prefHeight="315.0" prefWidth="321.0" styleClass="AnchorPane" stylesheets="@style.css">
+                           <children>
+                              <Button fx:id="AddButton1" layoutX="117.0" layoutY="269.0" mnemonicParsing="false" onAction="#handleAddButton" prefHeight="31.0" prefWidth="88.0" style="-fx-background-color: #df8e39; -fx-border-color: black; -fx-border-radius: 20px; -fx-background-radius: 20px;" text="Hozzáad">
+                                 <font>
+                                    <Font name="Serif Bold" size="15.0" />
+                                 </font>
+                              </Button>
+                              <TextField layoutX="69.0" layoutY="23.0" prefHeight="31.0" prefWidth="183.0" promptText="Itt keresd ki a filmet" />
+                           </children>
+                        </AnchorPane>
+                     </children></AnchorPane>
                </content>
             </Tab>
          </tabs>
