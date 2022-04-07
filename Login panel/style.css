@@ -50,6 +50,14 @@
     -fx-font-size: 25px;
     -fx-border-radius: 40px;
 }
+.Logoutlabel{
+    -fx-border-color: rgb(223, 142, 57);
+    -fx-background-color:rgb(223, 142, 57);
+    -fx-alignment: center;
+    -fx-font-size: 15px;
+    -fx-backgorund-radius: 20px;
+    -fx-border-radius: 20px;
+}
 
 .AnchorPane{
     -fx-background-color:rgb(226, 175, 68);
