@@ -19,6 +19,7 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="330.0" prefWidth="353.0" style="-fx-background-color: gray;" styleClass="AnchorPane" stylesheets="@style.css">
                      <children>
+                        <AnchorPane layoutX="6.0" layoutY="4.0" prefHeight="82.0" prefWidth="350.0" style="-fx-background-radius: 20; -fx-border-radius: 20;" styleClass="AnchorPane" stylesheets="@style.css" />
                         <Label fx:id="msg" layoutX="14.0" layoutY="24.0" prefHeight="42.0" prefWidth="60.0" style="-fx-border-color: black; -fx-background-radius: 20px; -fx-border-radius: 20px;" stylesheets="@style.css" text="Cím">
                            <font>
                               <Font size="25.0" />
@@ -36,7 +37,7 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="410.0" prefWidth="558.0" style="-fx-background-color: gray;">
                      <children>
-                        <AnchorPane layoutX="107.0" layoutY="23.0" prefHeight="363.0" prefWidth="370.0" styleClass="AnchorPane" stylesheets="@style.css">
+                        <AnchorPane layoutX="107.0" layoutY="23.0" prefHeight="363.0" prefWidth="370.0" style="-fx-background-radius: 20;" styleClass="AnchorPane" stylesheets="@style.css">
                            <children>
                               <TextField layoutX="93.0" layoutY="25.0" prefHeight="31.0" prefWidth="183.0" promptText="Itt keresd ki a filmet" style="-fx-border-color: transparent; -fx-background-radius: 20px;" />
                               <Label layoutX="34.0" layoutY="131.0" prefHeight="50.0" prefWidth="302.0" style="-fx-background-radius: 20px; -fx-border-color: black; -fx-border-radius: 20px;">
