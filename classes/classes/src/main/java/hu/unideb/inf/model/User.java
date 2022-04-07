@@ -18,7 +18,6 @@ public class User {
     private int seensum;
     private int screentime;
 
-    private List<User> users = new ArrayList<>();
 
     public Integer getId() {
         return id;
@@ -67,20 +66,30 @@ public class User {
         {
             User user = new User();
             // már felhasznált felhasználónévvel történő regisztráció tiltás
-            for (int i = 0; i<=users.size(); i++)
-            {
-                if (users.get(i).userName.equals(name))
+
+            String jdbcURL = "jdbc:h2:tcp://localhost/~/test";
+
+            Connection connection = DriverManager.getConnection(jdbcURL, "sa", "1234");
+            String sql = "SELECT * FROM USER";
+
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(sql);
+            while (resultSet.next()) {
+
+                String userName = resultSet.getString("userName");
+                if(userName.equals(name))
                 {
-                    // controllernek küldés, hogy már van ilyen felhasználó
+                    // controlleren keresztül, írja ki hogy ilyen felhasználó már van.
                 }
-                else
+                else  // ---  ha nincs ilyen név akkor tudjon regisztrálni
                 {
                     user.userName=name;
                     user.password=password;
                     uDAO.saveUser(user);
-                    users.add(user);
                 }
             }
+
+            connection.close();
 
         } catch (Exception e){
             e.printStackTrace();
