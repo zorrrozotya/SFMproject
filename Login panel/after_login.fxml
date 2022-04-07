@@ -107,16 +107,22 @@
             </Tab>
          </tabs>
       </TabPane>
+      <AnchorPane layoutX="11.0" layoutY="315.0" prefHeight="114.0" prefWidth="120.0" styleClass="AnchorPane" stylesheets="@style.css" />
       <ImageView fitHeight="124.0" fitWidth="192.0" layoutX="-20.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@MovieLogo.png" />
          </image>
       </ImageView>
-      <Button layoutX="41.0" layoutY="332.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="60.0" style="-fx-background-color: #232323;" />
-      <ImageView fitHeight="31.0" fitWidth="86.0" layoutX="56.0" layoutY="341.0" pickOnBounds="true" preserveRatio="true">
+      <Button layoutX="41.0" layoutY="332.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="61.0" style="-fx-background-color: #232323;" />
+      <ImageView fitHeight="31.0" fitWidth="86.0" layoutX="58.0" layoutY="341.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@log_out.png" />
          </image>
       </ImageView>
+      <Label alignment="CENTER" layoutX="17.0" layoutY="386.0" prefHeight="21.0" prefWidth="108.0" style="-fx-background-radius: 20;" styleClass="Logoutlabel" stylesheets="@style.css" text="Kijelentkezés">
+         <font>
+            <Font size="6.0" />
+         </font>
+      </Label>
    </children>
 </Pane>
