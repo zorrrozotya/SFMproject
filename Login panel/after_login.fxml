@@ -17,15 +17,15 @@
          <tabs>
             <Tab text="Követés">
                <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="330.0" prefWidth="353.0" style="-fx-background-color: gray;" styleClass="AnchorPane" stylesheets="@style.css">
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="330.0" prefWidth="353.0" style="-fx-background-color: gray;" stylesheets="@style.css">
                      <children>
-                        <AnchorPane layoutX="6.0" layoutY="4.0" prefHeight="82.0" prefWidth="350.0" style="-fx-background-radius: 20; -fx-border-radius: 20;" styleClass="AnchorPane" stylesheets="@style.css" />
-                        <Label fx:id="msg" layoutX="14.0" layoutY="24.0" prefHeight="42.0" prefWidth="60.0" style="-fx-border-color: black; -fx-background-radius: 20px; -fx-border-radius: 20px;" stylesheets="@style.css" text="Cím">
+                        <AnchorPane layoutX="6.0" layoutY="4.0" prefHeight="82.0" prefWidth="350.0" style="-fx-background-radius: 10; -fx-border-radius: 10;" styleClass="AnchorPane" stylesheets="@style.css" />
+                        <Label fx:id="msg" alignment="CENTER" layoutX="14.0" layoutY="24.0" prefHeight="42.0" prefWidth="60.0" style="-fx-border-color: black; -fx-background-radius: 10px; -fx-border-radius: 10px;" stylesheets="@style.css" text="Cím">
                            <font>
                               <Font size="25.0" />
                            </font>
                         </Label>
-                        <Label fx:id="msg1" layoutX="105.0" layoutY="22.0" prefHeight="46.0" prefWidth="237.0" style="-fx-border-color: black; -fx-background-radius: 20px; -fx-border-radius: 20px;" stylesheets="@style.css" text="Adatok">
+                        <Label fx:id="msg1" layoutX="105.0" layoutY="22.0" prefHeight="46.0" prefWidth="237.0" style="-fx-border-color: black; -fx-background-radius: 10px; -fx-border-radius: 10px;" stylesheets="@style.css" text="Adatok">
                            <font>
                               <Font size="25.0" />
                            </font>
@@ -37,15 +37,15 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="410.0" prefWidth="558.0" style="-fx-background-color: gray;">
                      <children>
-                        <AnchorPane layoutX="107.0" layoutY="23.0" prefHeight="363.0" prefWidth="370.0" style="-fx-background-radius: 20;" styleClass="AnchorPane" stylesheets="@style.css">
+                        <AnchorPane layoutX="107.0" layoutY="23.0" prefHeight="363.0" prefWidth="370.0" style="-fx-background-radius: 10;" styleClass="AnchorPane" stylesheets="@style.css">
                            <children>
                               <TextField layoutX="93.0" layoutY="25.0" prefHeight="31.0" prefWidth="183.0" promptText="Itt keresd ki a filmet" style="-fx-border-color: transparent; -fx-background-radius: 20px;" />
-                              <Label layoutX="34.0" layoutY="131.0" prefHeight="50.0" prefWidth="302.0" style="-fx-background-radius: 20px; -fx-border-color: black; -fx-border-radius: 20px;">
+                              <Label layoutX="34.0" layoutY="131.0" prefHeight="50.0" prefWidth="302.0" style="-fx-background-radius: 10px; -fx-border-color: black; -fx-border-radius: 10px;">
                                  <font>
                                     <Font size="1.0" />
                                  </font>
                               </Label>
-                              <Button fx:id="AddButton121" layoutX="141.0" layoutY="278.0" mnemonicParsing="false" onAction="#handleAddButton" prefHeight="31.0" prefWidth="88.0" style="-fx-background-color: #df8e39; -fx-border-color: black; -fx-border-radius: 20px; -fx-background-radius: 20px;" text="Keresés">
+                              <Button fx:id="AddButton121" layoutX="141.0" layoutY="278.0" mnemonicParsing="false" onAction="#handleAddButton" prefHeight="31.0" prefWidth="88.0" style="-fx-background-color: #df8e39; -fx-border-color: black; -fx-border-radius: 10px; -fx-background-radius: 10px;" text="Keresés">
                                  <font>
                                     <Font name="Serif Bold" size="15.0" />
                                  </font>
@@ -62,13 +62,13 @@
                         <AnchorPane layoutX="107.0" layoutY="23.0" prefHeight="363.0" prefWidth="370.0" styleClass="AnchorPane" stylesheets="@style.css">
                            <children>
                               <TextField fx:id="FilmGenre" layoutX="80.0" layoutY="138.0" prefHeight="26.0" prefWidth="209.0" promptText="Műfaj" style="-fx-border-color: transparent; -fx-background-radius: 20px;" />
-                              <TextField fx:id="FilmDescription" alignment="TOP_LEFT" layoutX="74.0" layoutY="190.0" prefHeight="62.0" prefWidth="222.0" promptText="Leírás" style="-fx-border-color: transparent; -fx-border-radius: 20px; -fx-background-radius: 20px;" />
+                              <TextField fx:id="FilmDescription" alignment="TOP_LEFT" layoutX="74.0" layoutY="190.0" prefHeight="62.0" prefWidth="222.0" promptText="Leírás" style="-fx-border-color: transparent; -fx-border-radius: 10px; -fx-background-radius: 10px;" />
                               <TextField fx:id="FilmName" layoutX="86.0" layoutY="92.0" prefHeight="26.0" prefWidth="198.0" promptText="Név" style="-fx-border-color: transparent; -fx-background-radius: 20px;" />
-                              <Button fx:id="AddButton" layoutX="141.0" layoutY="284.0" mnemonicParsing="false" onAction="#handleAddButton" prefHeight="31.0" prefWidth="88.0" style="-fx-background-color: #df8e39; -fx-border-color: black; -fx-border-radius: 20px; -fx-background-radius: 20px;" text="Hozzáad">
+                              <Button fx:id="AddButton" layoutX="141.0" layoutY="284.0" mnemonicParsing="false" onAction="#handleAddButton" prefHeight="31.0" prefWidth="88.0" style="-fx-background-color: #df8e39; -fx-border-color: black; -fx-border-radius: 10px; -fx-background-radius: 10px;" text="Hozzáad">
                                  <font>
                                     <Font name="Serif Bold" size="15.0" />
                                  </font></Button>
-                              <Label layoutX="37.0" layoutY="14.0" prefHeight="54.0" prefWidth="295.0" style="-fx-alignment: center; -fx-background-radius: 20px; -fx-border-color: black; -fx-border-radius: 20px;" stylesheets="@style.css" text="Add meg a film adatait">
+                              <Label layoutX="37.0" layoutY="14.0" prefHeight="54.0" prefWidth="295.0" style="-fx-alignment: center; -fx-background-radius: 10px; -fx-border-color: black; -fx-border-radius: 10px;" stylesheets="@style.css" text="Add meg a film adatait">
                                  <font>
                                     <Font name="System Bold" size="12.0" />
                                  </font>
@@ -84,18 +84,18 @@
                      <children>
                         <AnchorPane layoutX="107.0" layoutY="23.0" prefHeight="363.0" prefWidth="370.0" styleClass="AnchorPane" stylesheets="@style.css">
                            <children>
-                              <Button fx:id="AddButton1" layoutX="141.0" layoutY="267.0" mnemonicParsing="false" onAction="#handleAddButton" prefHeight="31.0" prefWidth="88.0" style="-fx-background-color: #df8e39; -fx-border-color: black; -fx-border-radius: 20px; -fx-background-radius: 20px;" text="Eltávolít">
+                              <Button fx:id="AddButton1" layoutX="141.0" layoutY="267.0" mnemonicParsing="false" onAction="#handleAddButton" prefHeight="31.0" prefWidth="88.0" style="-fx-background-color: #df8e39; -fx-border-color: black; -fx-border-radius: 10px; -fx-background-radius: 10px;" text="Eltávolít">
                                  <font>
                                     <Font name="Serif Bold" size="15.0" />
                                  </font>
                               </Button>
                               <TextField layoutX="93.0" layoutY="22.0" prefHeight="31.0" prefWidth="183.0" promptText="Itt keresd ki a filmet" style="-fx-border-color: transparent; -fx-background-radius: 20px;" />
-                              <Label layoutX="33.0" layoutY="131.0" prefHeight="50.0" prefWidth="302.0" style="-fx-background-radius: 20px; -fx-border-color: black; -fx-border-radius: 20px;">
+                              <Label layoutX="33.0" layoutY="131.0" prefHeight="50.0" prefWidth="302.0" style="-fx-background-radius: 10px; -fx-border-color: black; -fx-border-radius: 10px;">
                                  <font>
                                     <Font size="1.0" />
                                  </font>
                               </Label>
-                              <Button fx:id="AddButton12" layoutX="141.0" layoutY="70.0" mnemonicParsing="false" onAction="#handleAddButton" prefHeight="31.0" prefWidth="88.0" style="-fx-background-color: #df8e39; -fx-border-color: black; -fx-border-radius: 20px; -fx-background-radius: 20px;" text="Keresés">
+                              <Button fx:id="AddButton12" layoutX="141.0" layoutY="70.0" mnemonicParsing="false" onAction="#handleAddButton" prefHeight="31.0" prefWidth="88.0" style="-fx-background-color: #df8e39; -fx-border-color: black; -fx-border-radius: 10px; -fx-background-radius: 10px;" text="Keresés">
                                  <font>
                                     <Font name="Serif Bold" size="15.0" />
                                  </font>
@@ -107,13 +107,12 @@
             </Tab>
          </tabs>
       </TabPane>
-      <AnchorPane layoutX="11.0" layoutY="315.0" prefHeight="114.0" prefWidth="120.0" styleClass="AnchorPane" stylesheets="@style.css" />
       <ImageView fitHeight="124.0" fitWidth="192.0" layoutX="-20.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@MovieLogo.png" />
          </image>
       </ImageView>
-      <Button layoutX="41.0" layoutY="332.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="61.0" style="-fx-background-color: #232323;" />
+      <Button fx:id="Logoutbutton" layoutX="41.0" layoutY="332.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="61.0" style="-fx-background-color: #232323;" />
       <ImageView fitHeight="31.0" fitWidth="86.0" layoutX="58.0" layoutY="341.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@log_out.png" />

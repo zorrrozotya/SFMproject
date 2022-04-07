@@ -18,13 +18,13 @@
     -fx-background-color:rgb(223, 142, 57);
     -fx-padding: 0 20 0 20;
     -fx-border-color:transparent;
-    -fx-border-radius:20px;
-    -fx-background-radius:20px;
+    -fx-border-radius:10px;
+    -fx-background-radius:10px;
 
 }
 .tab:selected{
     -fx-background-color:rgb(223, 142, 57);
-    -fx-background-radius: 20px;
+    -fx-background-radius: 10px;
     -fx-backround-insets: 0;
     -fx-border-width: 5 5 5 5;
     -fx-border-color: rgb(226, 175, 68);

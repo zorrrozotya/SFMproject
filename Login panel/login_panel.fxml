@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<TabPane fx:id="tabpanelogin" style="-fx-background-color: red;" stylesheets="@login.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<TabPane fx:id="tabpanelogin" stylesheets="@login.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <tabs>
       <Tab closable="false" text="Register">
         <content>
@@ -37,7 +37,7 @@
                                     </Label>
                                     <TextField fx:id="usernameText" layoutX="157.0" layoutY="146.0" promptText="Username" style="-fx-background-color: -;" />
                                     <PasswordField fx:id="passwordText" layoutX="158.0" layoutY="187.0" promptText="Password" />
-                                    <Button fx:id="RegisterButton" layoutX="149.0" layoutY="240.0" mnemonicParsing="false" onAction="#HandleRegisterButton" style="-fx-background-color: #ea950c; -fx-background-radius: 20px;" text="Register">
+                                    <Button fx:id="RegisterButton" layoutX="149.0" layoutY="240.0" mnemonicParsing="false" onAction="#HandleRegisterButton" style="-fx-background-color: #ea950c; -fx-background-radius: 10px;" text="Register">
                                        <font>
                                           <Font name="System Bold" size="15.0" />
                                        </font>
