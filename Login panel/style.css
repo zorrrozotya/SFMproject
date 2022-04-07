@@ -53,5 +53,5 @@
 
 .AnchorPane{
     -fx-background-color:rgb(226, 175, 68);
-    -fx-border-radius: 25px;
+    -fx-background-radius: 20px;
 }
