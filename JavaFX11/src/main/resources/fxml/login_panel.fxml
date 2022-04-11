@@ -15,7 +15,7 @@
 
 <TabPane fx:id="tabpanelogin" stylesheets="@../styles/login.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.controller.FXMLLoginPanelController">
    <tabs>
-      <Tab closable="false" text="regisztráció">
+      <Tab closable="false" text="Regisztráció">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>

@@ -16,7 +16,7 @@
 
 .tab{
     -fx-background-color:rgb(223, 142, 57);
-    -fx-padding: 0 10 0 20;
+    
     -fx-border-color:transparent;
     -fx-border-radius:10px;
     -fx-background-radius:10px;
