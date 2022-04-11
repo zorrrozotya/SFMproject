@@ -11,21 +11,21 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="720.0" style="-fx-background-color: #232323;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="720.0" style="-fx-background-color: #232323;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.controller.FXMLAfterLoginController">
    <children>
-      <TabPane fx:id="tabpane" layoutX="136.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="584.0" style="-fx-background-color: #232323;" stylesheets="@style.css" tabClosingPolicy="UNAVAILABLE">
+      <TabPane fx:id="tabpane" layoutX="136.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="584.0" style="-fx-background-color: #232323;" stylesheets="@../styles/style.css" tabClosingPolicy="UNAVAILABLE">
          <tabs>
             <Tab text="Követés">
                <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="330.0" prefWidth="353.0" style="-fx-background-color: gray;" stylesheets="@style.css">
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="330.0" prefWidth="353.0" style="-fx-background-color: gray;" stylesheets="@../styles/style.css">
                      <children>
-                        <AnchorPane layoutX="6.0" layoutY="4.0" prefHeight="82.0" prefWidth="350.0" style="-fx-background-radius: 10; -fx-border-radius: 10;" styleClass="AnchorPane" stylesheets="@style.css" />
-                        <Label fx:id="msg" alignment="CENTER" layoutX="14.0" layoutY="24.0" prefHeight="42.0" prefWidth="60.0" style="-fx-border-color: black; -fx-background-radius: 10px; -fx-border-radius: 10px;" stylesheets="@style.css" text="Cím">
+                        <AnchorPane layoutX="6.0" layoutY="4.0" prefHeight="82.0" prefWidth="350.0" style="-fx-background-radius: 10; -fx-border-radius: 10;" styleClass="AnchorPane" stylesheets="@../styles/style.css" />
+                        <Label fx:id="msg" alignment="CENTER" layoutX="14.0" layoutY="24.0" prefHeight="42.0" prefWidth="60.0" style="-fx-border-color: black; -fx-background-radius: 10px; -fx-border-radius: 10px;" stylesheets="@../styles/style.css" text="Cím">
                            <font>
                               <Font size="25.0" />
                            </font>
                         </Label>
-                        <Label fx:id="msg1" layoutX="105.0" layoutY="22.0" prefHeight="46.0" prefWidth="237.0" style="-fx-border-color: black; -fx-background-radius: 10px; -fx-border-radius: 10px;" stylesheets="@style.css" text="Adatok">
+                        <Label fx:id="msg1" layoutX="105.0" layoutY="22.0" prefHeight="46.0" prefWidth="237.0" style="-fx-border-color: black; -fx-background-radius: 10px; -fx-border-radius: 10px;" stylesheets="@../styles/style.css" text="Adatok">
                            <font>
                               <Font size="25.0" />
                            </font>
@@ -37,7 +37,7 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="410.0" prefWidth="558.0" style="-fx-background-color: gray;">
                      <children>
-                        <AnchorPane layoutX="107.0" layoutY="23.0" prefHeight="363.0" prefWidth="370.0" style="-fx-background-radius: 10;" styleClass="AnchorPane" stylesheets="@style.css">
+                        <AnchorPane layoutX="107.0" layoutY="23.0" prefHeight="363.0" prefWidth="370.0" style="-fx-background-radius: 10;" styleClass="AnchorPane" stylesheets="@../styles/style.css">
                            <children>
                               <TextField layoutX="93.0" layoutY="25.0" prefHeight="31.0" prefWidth="183.0" promptText="Itt keresd ki a filmet" style="-fx-border-color: transparent; -fx-background-radius: 20px;" />
                               <Label layoutX="34.0" layoutY="131.0" prefHeight="50.0" prefWidth="302.0" style="-fx-background-radius: 10px; -fx-border-color: black; -fx-border-radius: 10px;">
@@ -57,9 +57,9 @@
             </Tab>
             <Tab text="Hozzáadás">
                <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: gray;" stylesheets="@style.css">
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: gray;" stylesheets="@../styles/style.css">
                      <children>
-                        <AnchorPane layoutX="107.0" layoutY="23.0" prefHeight="363.0" prefWidth="370.0" styleClass="AnchorPane" stylesheets="@style.css">
+                        <AnchorPane layoutX="107.0" layoutY="23.0" prefHeight="363.0" prefWidth="370.0" styleClass="AnchorPane" stylesheets="@../styles/style.css">
                            <children>
                               <TextField fx:id="FilmGenre" layoutX="80.0" layoutY="138.0" prefHeight="26.0" prefWidth="209.0" promptText="Műfaj" style="-fx-border-color: transparent; -fx-background-radius: 20px;" />
                               <TextField fx:id="FilmDescription" alignment="TOP_LEFT" layoutX="74.0" layoutY="190.0" prefHeight="62.0" prefWidth="222.0" promptText="Leírás" style="-fx-border-color: transparent; -fx-border-radius: 10px; -fx-background-radius: 10px;" />
@@ -68,7 +68,7 @@
                                  <font>
                                     <Font name="Serif Bold" size="15.0" />
                                  </font></Button>
-                              <Label layoutX="37.0" layoutY="14.0" prefHeight="54.0" prefWidth="295.0" style="-fx-alignment: center; -fx-background-radius: 10px; -fx-border-color: black; -fx-border-radius: 10px;" stylesheets="@style.css" text="Add meg a film adatait">
+                              <Label layoutX="37.0" layoutY="14.0" prefHeight="54.0" prefWidth="295.0" style="-fx-alignment: center; -fx-background-radius: 10px; -fx-border-color: black; -fx-border-radius: 10px;" stylesheets="@../styles/style.css" text="Add meg a film adatait">
                                  <font>
                                     <Font name="System Bold" size="12.0" />
                                  </font>
@@ -82,7 +82,7 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: gray;">
                      <children>
-                        <AnchorPane layoutX="107.0" layoutY="23.0" prefHeight="363.0" prefWidth="370.0" styleClass="AnchorPane" stylesheets="@style.css">
+                        <AnchorPane layoutX="107.0" layoutY="23.0" prefHeight="363.0" prefWidth="370.0" styleClass="AnchorPane" stylesheets="@../styles/style.css">
                            <children>
                               <Button fx:id="AddButton1" layoutX="141.0" layoutY="267.0" mnemonicParsing="false" onAction="#handleAddButton" prefHeight="31.0" prefWidth="88.0" style="-fx-background-color: #df8e39; -fx-border-color: black; -fx-border-radius: 10px; -fx-background-radius: 10px;" text="Eltávolít">
                                  <font>
@@ -118,7 +118,7 @@
             <Image url="@log_out.png" />
          </image>
       </ImageView>
-      <Label alignment="CENTER" layoutX="17.0" layoutY="386.0" prefHeight="21.0" prefWidth="108.0" style="-fx-background-radius: 20;" styleClass="Logoutlabel" stylesheets="@style.css" text="Kijelentkezés">
+      <Label alignment="CENTER" layoutX="17.0" layoutY="386.0" prefHeight="21.0" prefWidth="108.0" style="-fx-background-radius: 20;" styleClass="Logoutlabel" stylesheets="@../styles/style.css" text="Kijelentkezés">
          <font>
             <Font size="6.0" />
          </font>
