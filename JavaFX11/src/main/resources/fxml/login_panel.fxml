@@ -15,7 +15,7 @@
 
 <TabPane fx:id="tabpanelogin" stylesheets="@../styles/login.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hu.unideb.inf.controller.FXMLLoginPanelController">
    <tabs>
-      <Tab closable="false" text="Register">
+      <Tab closable="false" text="regisztráció">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
@@ -25,19 +25,19 @@
                            <children>
                               <AnchorPane layoutX="239.0" prefHeight="400.0" prefWidth="362.0" style="-fx-background-color: #232323;">
                                  <children>
-                                    <Label layoutX="14.0" layoutY="141.0" text="Username" textFill="#ea950c">
+                                    <Label layoutX="14.0" layoutY="141.0" prefHeight="31.0" prefWidth="186.0" text="Felhasználónév" textFill="#ea950c">
                                        <font>
                                           <Font name="Serif Bold" size="28.0" />
                                        </font>
                                     </Label>
-                                    <Label layoutX="17.0" layoutY="184.0" text="Password" textFill="#ea950c">
+                                    <Label layoutX="17.0" layoutY="184.0" text="Jelszó" textFill="#ea950c">
                                        <font>
                                           <Font name="Serif Bold" size="28.0" />
                                        </font>
                                     </Label>
-                                    <TextField fx:id="usernameText" layoutX="157.0" layoutY="146.0" promptText="Username" style="-fx-background-color: -;" />
-                                    <PasswordField fx:id="passwordText" layoutX="158.0" layoutY="187.0" promptText="Password" />
-                                    <Button fx:id="RegisterButton" layoutX="149.0" layoutY="240.0" mnemonicParsing="false" onAction="#HandleRegisterButton" style="-fx-background-color: #ea950c; -fx-background-radius: 10px;" text="Register">
+                                    <TextField fx:id="usernameText" layoutX="200.0" layoutY="144.0" promptText="Felhasználónév" style="-fx-background-color: -;" />
+                                    <PasswordField fx:id="passwordText" layoutX="200.0" layoutY="187.0" promptText="Jelszó" />
+                                    <Button fx:id="RegisterButton" layoutX="131.0" layoutY="241.0" mnemonicParsing="false" onAction="#HandleRegisterButton" style="-fx-background-color: #ea950c; -fx-background-radius: 10px;" text="Regisztáció">
                                        <font>
                                           <Font name="System Bold" size="15.0" />
                                        </font>
@@ -70,7 +70,7 @@
             </AnchorPane>
         </content>
       </Tab>
-      <Tab closable="false" text="Log in">
+      <Tab closable="false" text="Bejelentkezés">
          <content>
             <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
                <left>
@@ -83,19 +83,19 @@
                                     <Image url="@padlock.png" />
                                  </image>
                               </ImageView>
-                              <Label layoutX="14.0" layoutY="141.0" text="Username" textFill="#ea950c">
+                              <Label layoutX="14.0" layoutY="141.0" text="Felhasználónév" textFill="#ea950c">
                                  <font>
                                     <Font name="Serif Bold" size="28.0" />
                                  </font>
                               </Label>
-                              <Label layoutX="17.0" layoutY="184.0" text="Password" textFill="#ea950c">
+                              <Label layoutX="17.0" layoutY="184.0" text="Jelszó" textFill="#ea950c">
                                  <font>
                                     <Font name="Serif Bold" size="28.0" />
                                  </font>
                               </Label>
-                              <TextField fx:id="LoginNameText" layoutX="157.0" layoutY="146.0" promptText="Username" style="-fx-background-color: -;" />
-                              <PasswordField fx:id="LoginPasswordText" layoutX="158.0" layoutY="187.0" promptText="Password" />
-                              <Button fx:id="LogInButton" layoutX="149.0" layoutY="240.0" mnemonicParsing="false" onAction="#HandleLogInButoon" style="-fx-background-color: #ea950c; -fx-background-radius: 20px;" text="Log In">
+                              <TextField fx:id="LoginNameText" layoutX="198.0" layoutY="144.0" promptText="felhasználónév" style="-fx-background-color: -;" />
+                              <PasswordField fx:id="LoginPasswordText" layoutX="198.0" layoutY="187.0" promptText="Jelszó" />
+                              <Button fx:id="LogInButton" layoutX="123.0" layoutY="244.0" mnemonicParsing="false" onAction="#HandleLogInButoon" style="-fx-background-color: #ea950c; -fx-background-radius: 10px;" text="Bejelentkezés">
                                  <font>
                                     <Font name="System Bold" size="15.0" />
                                  </font>
