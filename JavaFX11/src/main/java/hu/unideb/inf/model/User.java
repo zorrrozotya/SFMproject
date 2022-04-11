@@ -60,7 +60,7 @@ public class User {
     }
 
 
-    public void User_Register(String name, String password)
+    public int User_Register(String name, String password)
     {
         try (UserDAO uDAO = new JpaUserDao())
         {
@@ -68,29 +68,38 @@ public class User {
             for (int i = 0; i < users.size(); i++) {
                 if(users.get(i).userName.toLowerCase().equals(name))
                 {
-                    //  ---  ilyen felhasználó már van ->  kontroller
-                }
-                else // egyébként hozzákerül az adatbázishoz
-                {
-                    User user = new User();
-                    user.userName=name;
-                    user.password=password;
-                    uDAO.saveUser(user);
-
-                    // kontrollernek küldés hogy sikeres regisztráció
+                    return 0; //  ---  ilyen felhasználó már van
                 }
             }
+            User user = new User();
+            user.userName=name;
+            user.password=password;
+            uDAO.saveUser(user);
 
         } catch (Exception e){
             e.printStackTrace();
         }
 
+        return 1;   //  --  hozzáadva a database-hez
+    }
+
+
+    public int User_Login(String name, String password) throws SQLException {
+        List<User> Users = new ArrayList<>();
+        Users = getUsers();
+        for (int i = 0; i < Users.size(); i++) {
+            if(Users.get(i).userName.equals(name) && Users.get(i).password.equals(password))
+            {
+                return 1;//  --  sikeres bejelentkezés
+            }
+        }
+
+        return 0;  //  --  sikertelen bejelentkezés
 
     }
 
     public static List<User> getUsers() throws SQLException {
-        String jdbcURL = "jdbc:h2:mem:my_database";
-
+        String jdbcURL = "jdbc:h2:file:~/my_database";
 
         Connection connection = DriverManager.getConnection(jdbcURL, "sa", "1234");
         String sql = "SELECT * FROM USER";
