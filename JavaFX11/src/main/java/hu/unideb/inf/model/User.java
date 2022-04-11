@@ -60,31 +60,38 @@ public class User {
     }
 
 
-    public int User_Register(String name, String password)
+    public static int User_Register(String name, String password)
     {
+
+        int siker = 1;
+
         try (UserDAO uDAO = new JpaUserDao())
         {
             List<User> users = getUsers();
             for (int i = 0; i < users.size(); i++) {
                 if(users.get(i).userName.toLowerCase().equals(name))
                 {
-                    return 0; //  ---  ilyen felhasználó már van
+                    siker = 0; //  ---  ilyen felhasználó már van
                 }
             }
-            User user = new User();
-            user.userName=name;
-            user.password=password;
-            uDAO.saveUser(user);
+            if(siker == 1){
+                User user = new User();
+                user.setUserName(name);
+                user.setPassword(password);
+                uDAO.saveUser(user);
+            }
+
 
         } catch (Exception e){
             e.printStackTrace();
         }
 
-        return 1;   //  --  hozzáadva a database-hez
+
+        return siker;   //  --  hozzáadva a database-hez
     }
 
 
-    public int User_Login(String name, String password) throws SQLException {
+    public static int User_Login(String name, String password) throws SQLException {
         List<User> Users = new ArrayList<>();
         Users = getUsers();
         for (int i = 0; i < Users.size(); i++) {
@@ -101,7 +108,7 @@ public class User {
     public static List<User> getUsers() throws SQLException {
         String jdbcURL = "jdbc:h2:file:~/my_database";
 
-        Connection connection = DriverManager.getConnection(jdbcURL, "sa", "1234");
+        Connection connection = DriverManager.getConnection(jdbcURL, "sa", "");
         String sql = "SELECT * FROM USER";
         List<User> Users = new ArrayList<>();
 
@@ -112,8 +119,8 @@ public class User {
             User user = new User();
             String userName = resultSet.getString("userName");
             String password = resultSet.getString("password");
-            user.userName = userName;
-            user.password = password;
+            user.setUserName(userName);
+            user.setPassword(password);
             Users.add(user);
         }
         return Users;

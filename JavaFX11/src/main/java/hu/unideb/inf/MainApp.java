@@ -3,6 +3,8 @@ package hu.unideb.inf;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import hu.unideb.inf.model.Movies;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
 import javafx.fxml.FXMLLoader;
@@ -22,17 +24,10 @@ public class MainApp extends Application {
 
     }
 
-    /**
-     * The main() method is ignored in correctly deployed JavaFX application.
-     * main() serves only as fallback in case the application can not be
-     * launched through deployment artifacts, e.g., in IDEs with limited FX
-     * support. NetBeans ignores main().
-     *
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         try {
             startDatabase();
+            Movies.SetDatabase();
         } catch (SQLException ex) {
             Logger.getLogger(MainApp.class.getName()).log(Level.SEVERE, null, ex);
             return;
@@ -42,7 +37,7 @@ public class MainApp extends Application {
     }
 
     private static Server s = new Server();
-    
+
     private static void startDatabase() throws SQLException {
         s.runTool("-tcp", "-web", "-ifNotExists");
     }
@@ -50,5 +45,5 @@ public class MainApp extends Application {
     private static void stopDatabase()  {
         s.shutdown();
     }
-    
+
 }
