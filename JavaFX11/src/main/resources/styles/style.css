@@ -1,0 +1,65 @@
+#tabpane{
+    -fx-tab-min-height: 5em;
+    -fx-tab-max-height:5em;
+    -fx-tab-max-width: 6em;
+    -fx-tab-min-width: 4em;
+}
+.tab .tab-label {
+
+    -fx-background-color:transparent;
+    -fx-alignment: center;
+    -fx-text-fill: black;
+    -fx-font-size: 15px;
+    
+
+}
+
+.tab{
+    -fx-background-color:rgb(223, 142, 57);
+    -fx-padding: 0 20 0 20;
+    -fx-border-color:black;
+    -fx-border-radius:10px;
+    -fx-background-radius:10px;
+
+}
+.tab:selected{
+    -fx-background-color:rgb(223, 142, 57);
+    -fx-background-radius: 15px;
+    -fx-backround-insets: 0;
+    -fx-border-width: 5 5 5 5;
+    -fx-border-color: rgb(226, 175, 68);
+    -fx-border-radius:10px;
+}
+
+.tab:focused{
+    -fx-focus-color:transparent;
+}
+
+.tab-pane *.tab-header-background{
+    -fx-background-color:transparent;
+}
+
+.tab:selected .focus-indicator{
+    -fx-focus-color:none;
+}
+
+.label{
+    -fx-border-color: rgb(223, 142, 57);
+    -fx-background-color:rgb(223, 142, 57);
+    -fx-alignment: center-left;
+    -fx-font-size: 25px;
+    -fx-border-radius: 10px;
+}
+.Logoutlabel{
+    -fx-border-color: rgb(223, 142, 57);
+    -fx-background-color:rgb(223, 142, 57);
+    -fx-alignment: center;
+    -fx-font-size: 15px;
+    -fx-backgorund-radius: 20px;
+    -fx-border-radius: 20px;
+}
+
+.AnchorPane{
+    -fx-background-color:rgb(226, 175, 68);
+    -fx-background-radius: 10px;
+}
