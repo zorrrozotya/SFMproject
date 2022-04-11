@@ -118,7 +118,7 @@
             <Image url="@log_out.png" />
          </image>
       </ImageView>
-      <Label alignment="CENTER" layoutX="17.0" layoutY="386.0" prefHeight="21.0" prefWidth="108.0" style="-fx-background-radius: 20;" styleClass="Logoutlabel" stylesheets="@../styles/style.css" text="Kijelentkezés">
+      <Label alignment="CENTER" layoutX="17.0" layoutY="386.0" prefHeight="21.0" prefWidth="108.0" style="-fx-background-radius: 5px;" styleClass="Logoutlabel" stylesheets="@../styles/style.css" text="Kijelentkezés">
          <font>
             <Font size="6.0" />
          </font>
