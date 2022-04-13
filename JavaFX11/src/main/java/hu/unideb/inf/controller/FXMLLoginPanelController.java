@@ -1,5 +1,6 @@
 package hu.unideb.inf.controller;
 
+import hu.unideb.inf.model.Movies;
 import hu.unideb.inf.model.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -26,7 +27,7 @@ public class FXMLLoginPanelController implements Initializable {
     private Button LogInButton;
 
     @FXML
-    private TextField LoginNameText;
+    private TextField LoginUsernameText;
 
     @FXML
     private PasswordField LoginPasswordText;
@@ -35,32 +36,61 @@ public class FXMLLoginPanelController implements Initializable {
     private Button RegisterButton;
 
     @FXML
-    private PasswordField passwordText;
+    private PasswordField RegisterPasswordText;
 
     @FXML
     private TabPane tabpanelogin;
 
     @FXML
-    private TextField usernameText;
-
-    @FXML
-    void HandleLogInButoon(ActionEvent event) throws SQLException{
-
-        System.out.println(LoginNameText.getText());
-        System.out.println(LoginPasswordText.getText());
-        int a = User.User_Login(LoginNameText.getText(),LoginPasswordText.getText());
-        System.out.println(a);
-    }
+    private TextField RegisterUsernameText;
 
     @FXML
     void HandleRegisterButton(ActionEvent event) throws SQLException {
 
-        System.out.println(usernameText.getText());
-        System.out.println(passwordText.getText());
-        int a = User.User_Register(usernameText.getText(),passwordText.getText());
-        System.out.println(a);
+        System.out.println("Register gomb megnyomva");
+        System.out.println("Felhasználónév: "+RegisterUsernameText.getText());
+        System.out.println("Jelszó: "+RegisterPasswordText.getText());
 
-    }
+        int s = User.User_Register(RegisterUsernameText.getText(),RegisterPasswordText.getText());
+
+        System.out.println(s);
+        switch(s){
+            case 0 :
+                System.out.println("Sikeres regisztráció");
+                break;
+            case 1 :
+                System.out.println("Már létezik ilyen felhasználó");
+                break;
+            case 2:
+                System.out.println("Nem megfelelő formátumú adatok");
+                break;
+        }
+    }//RegisterButton vége
+
+
+    @FXML
+    void HandleLogInButoon(ActionEvent event) throws SQLException{
+
+        System.out.println("Login gomb megnyomva");
+        System.out.println("Felhasznalonev: "+LoginUsernameText.getText());
+        System.out.println("Jelszo: "+LoginPasswordText.getText());
+
+        int s = User.User_Login(LoginUsernameText.getText(),LoginPasswordText.getText());
+        System.out.println(s);
+
+        switch(s){
+            case 0 :
+                System.out.println("Sikeres bejelentkezés");
+                break;
+            case 1 :
+                System.out.println("Nincs ilyen felhasználónév");
+                break;
+            case 2:
+                System.out.println("Téves jelszó");
+                break;
+        }
+
+    }//LoginButton vége
 
 
     @Override

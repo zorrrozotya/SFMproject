@@ -3,6 +3,8 @@
   <persistence-unit name="br.com.fredericci.pu">
     <description>Hibernate EntityManager Demo</description>
     <class>hu.unideb.inf.model.Student</class>
+    <class>hu.unideb.inf.model.Movies</class>
+    <class>hu.unideb.inf.model.User</class>
     <exclude-unlisted-classes>true</exclude-unlisted-classes>
     <properties>
       <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>

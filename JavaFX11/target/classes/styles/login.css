@@ -1,7 +1,7 @@
 #tabpanelogin{
     -fx-tab-min-height: 5em;
     -fx-tab-max-height:5em;
-    -fx-tab-max-width: 6em;
+    -fx-tab-max-width: 8em;
     -fx-tab-min-width: 4em;
 }
 
@@ -11,15 +11,16 @@
     -fx-alignment: center;
     -fx-text-fill: black;
     -fx-font-size: 15px;
+    -fx-text-align: center;
 }
-
 
 .tab{
     -fx-background-color:rgb(223, 142, 57);
-    -fx-padding: 0 20 0 20;
+    
     -fx-border-color:transparent;
     -fx-border-radius:10px;
     -fx-background-radius:10px;
+    
 
 }
 .tab:selected{
