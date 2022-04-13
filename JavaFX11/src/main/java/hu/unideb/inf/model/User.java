@@ -6,6 +6,7 @@ import javax.persistence.Id;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 
 @Entity
@@ -63,46 +64,71 @@ public class User {
     public static int User_Register(String name, String password)
     {
 
-        int siker = 1;
+        int s = 0;  // 0 = sikeres regisztráció,
+                    // 1 = Már létezik ilyen felhasználó ,
+                    // 2 = Nem megfelelő formátumú adatok
 
-        try (UserDAO uDAO = new JpaUserDao())
-        {
-            List<User> users = getUsers();
-            for (int i = 0; i < users.size(); i++) {
-                if(users.get(i).userName.toLowerCase().equals(name))
-                {
-                    siker = 0; //  ---  ilyen felhasználó már van
+        if(name.length() < 5 || password.length() < 8 || name.length() > 15 || password.length() > 15){
+            s = 2; //  --  nem megfelelő a formátum
+        }
+        else{
+            try (UserDAO uDAO = new JpaUserDao())
+            {
+                List<User> users = getUsers();
+                for (int i = 0; i < users.size(); i++) {
+                    if(users.get(i).userName.equalsIgnoreCase(name))
+                    {
+                        s = 1; //  --  ilyen felhasználó már van
+                        break;
+                    }
                 }
-            }
-            if(siker == 1){
-                User user = new User();
-                user.setUserName(name);
-                user.setPassword(password);
-                uDAO.saveUser(user);
-            }
+
+                if(s == 0){
+                    User user = new User();
+                    user.setUserName(name);
+                    user.setPassword(password);
+                    uDAO.saveUser(user);
+                }
 
 
-        } catch (Exception e){
-            e.printStackTrace();
+            } catch (Exception e){
+                e.printStackTrace();
+            }
         }
 
-
-        return siker;   //  --  hozzáadva a database-hez
+        return s;
     }
 
 
     public static int User_Login(String name, String password) throws SQLException {
-        List<User> Users = new ArrayList<>();
-        Users = getUsers();
+
+        int s = 1;  // 0 = Sikeres bejelentkezés
+                    // 1 = Nincs ilyen felhasználónév
+                    // 2 = Téves jelszó
+
+        List<User> Users = getUsers();
+
         for (int i = 0; i < Users.size(); i++) {
-            if(Users.get(i).userName.equals(name) && Users.get(i).password.equals(password))
-            {
-                return 1;//  --  sikeres bejelentkezés
+
+            if(Users.get(i).userName.equals(name)) {
+
+                if(Users.get(i).password.equals(password)){
+                    s = 0;
+                    break;
+                    //  --  sikeres bejelentkezés
+                }
+
+                else{
+                    s = 2;
+                    break;
+                    // -- téves jelszó
+                }
+
             }
+
         }
 
-        return 0;  //  --  sikertelen bejelentkezés
-
+        return s;
     }
 
     public static List<User> getUsers() throws SQLException {

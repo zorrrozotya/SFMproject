@@ -27,11 +27,11 @@ public class MainApp extends Application {
     public static void main(String[] args) {
         try {
             startDatabase();
-            Movies.SetDatabase();
         } catch (SQLException ex) {
             Logger.getLogger(MainApp.class.getName()).log(Level.SEVERE, null, ex);
             return;
         }
+
         launch(args);
         stopDatabase();
     }
