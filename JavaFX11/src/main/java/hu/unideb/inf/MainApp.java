@@ -9,20 +9,25 @@ import javafx.application.Application;
 import static javafx.application.Application.launch;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import org.h2.tools.Server;
 
 public class MainApp extends Application {
 
     @Override
-    public void start(Stage stage) throws Exception {
+    public void start(Stage primarystage) throws Exception {
         FXMLLoader loader = new FXMLLoader(MainApp.class.getResource("/fxml/login_panel.fxml"));
         Scene scene = new Scene(loader.load());
-        stage.setTitle("Movie - Login");
-        stage.setScene(scene);
-        stage.show();
 
+        primarystage.setTitle("Movie - Login");
+
+        primarystage.setScene(scene);
+        primarystage.getIcons().add(new Image("/fxml/xd.bmp"));
+        primarystage.show();
+        
     }
+
 
     public static void main(String[] args) {
         try {
@@ -33,6 +38,7 @@ public class MainApp extends Application {
         }
 
         launch(args);
+
         stopDatabase();
     }
 
