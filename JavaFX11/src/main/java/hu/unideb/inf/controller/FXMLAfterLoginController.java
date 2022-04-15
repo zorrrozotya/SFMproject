@@ -7,6 +7,8 @@ package hu.unideb.inf.controller;
         import javafx.scene.control.Label;
         import javafx.scene.control.TabPane;
         import javafx.scene.control.TextField;
+        import javafx.scene.layout.Pane;
+        import javafx.stage.Stage;
 
         import java.net.URL;
         import java.util.ResourceBundle;
@@ -47,8 +49,20 @@ public class FXMLAfterLoginController implements Initializable {
     private TabPane tabpane;
 
     @FXML
+    private Pane scenePane;
+
+    @FXML
     void handleAddButton(ActionEvent event) {
 
+    }
+
+
+        Stage stage;
+    @FXML
+    public void handleLogoutButtonPushed(ActionEvent event) {
+        stage = (Stage) scenePane.getScene().getWindow();
+        System.out.println("Sikeres kijelentkezés!");
+        stage.close();
     }
 
 
