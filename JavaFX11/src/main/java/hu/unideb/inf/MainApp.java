@@ -23,7 +23,7 @@ public class MainApp extends Application {
         primarystage.setTitle("Movie - Login");
 
         primarystage.setScene(scene);
-        primarystage.getIcons().add(new Image("/fxml/xd.bmp"));
+        primarystage.getIcons().add(new Image("/fxml/xd.png"));
         primarystage.show();
         
     }
