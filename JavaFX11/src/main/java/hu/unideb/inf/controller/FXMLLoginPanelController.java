@@ -93,8 +93,8 @@ public class FXMLLoginPanelController implements Initializable {
 
         switch(s){
             case 0 :
-                System.out.println("Sikeres bejelentkezés!");
-                ErrorRegText.setStyle("-fx-text-fill: green;");
+                ;System.out.println("Sikeres bejelentkezés!");
+                ErrorLogText.setStyle("-fx-text-fill: green;");
                 ErrorLogText.setText("Sikeres bejelentkezés!");
                 openAfterLogin();
                 break;
@@ -118,8 +118,11 @@ public class FXMLLoginPanelController implements Initializable {
         Stage afterStage = new Stage(StageStyle.DECORATED);
         afterStage.setTitle("Movie");
         afterStage.setScene(scene);
-        afterStage.getIcons().add(new Image("/fxml/xd.bmp"));
-
+        afterStage.getIcons().add(new Image("/fxml/xd.png"));
+        afterStage.setMinWidth(1280);
+        afterStage.setMaxWidth(1280);
+        afterStage.setMinHeight(720);
+        afterStage.setMaxHeight(720);
         afterStage.initModality(Modality.APPLICATION_MODAL);
         afterStage.show();
 

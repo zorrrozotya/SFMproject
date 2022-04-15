@@ -24,6 +24,10 @@ public class MainApp extends Application {
 
         primarystage.setScene(scene);
         primarystage.getIcons().add(new Image("/fxml/xd.png"));
+        primarystage.setMinWidth(800);
+        primarystage.setMaxWidth(800);
+        primarystage.setMinHeight(600);
+        primarystage.setMaxHeight(600);
         primarystage.show();
         
     }
