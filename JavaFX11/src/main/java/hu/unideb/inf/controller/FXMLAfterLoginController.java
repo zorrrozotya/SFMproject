@@ -1,5 +1,6 @@
 package hu.unideb.inf.controller;
 
+        import hu.unideb.inf.model.Movies;
         import javafx.event.ActionEvent;
         import javafx.fxml.FXML;
         import javafx.fxml.Initializable;
@@ -11,6 +12,7 @@ package hu.unideb.inf.controller;
         import javafx.stage.Stage;
 
         import java.net.URL;
+        import java.sql.SQLException;
         import java.util.ResourceBundle;
 
 public class FXMLAfterLoginController implements Initializable {
@@ -22,16 +24,22 @@ public class FXMLAfterLoginController implements Initializable {
     private Button AddButton1;
 
     @FXML
+    private Button addSearched;
+
+    @FXML
     private Button AddButton12;
 
     @FXML
-    private Button AddButton121;
+    private Button searchButton;
 
     @FXML
     private TextField FilmDescription;
 
     @FXML
     private TextField FilmGenre;
+
+    @FXML
+    private TextField searchText;
 
     @FXML
     private TextField FilmName;
@@ -46,6 +54,9 @@ public class FXMLAfterLoginController implements Initializable {
     private Label msg1;
 
     @FXML
+    private Label searchLabel;
+
+    @FXML
     private TabPane tabpane;
 
     @FXML
@@ -56,12 +67,24 @@ public class FXMLAfterLoginController implements Initializable {
 
     }
 
+    @FXML
+    void handleSearchButton(ActionEvent event) throws SQLException {
+        System.out.println("kereses megnyomva");
+        Movies m = Movies.searchMovie(searchText.getText());
+        if(m == null){
+            searchLabel.setText("Nincs ilyen film");
+        }
+        else{
+            searchLabel.setText(m.getTitle());
+            addSearched.setDisable(false);
+        }
+    }
 
-        Stage stage;
+    Stage stage;
     @FXML
     public void handleLogoutButtonPushed(ActionEvent event) {
         stage = (Stage) scenePane.getScene().getWindow();
-        System.out.println("Sikeres kijelentkezés!");
+        System.out.println("Sikeres kijelentkezes!");
         stage.close();
     }
 

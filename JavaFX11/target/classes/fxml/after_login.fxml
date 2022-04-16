@@ -37,15 +37,20 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="410.0" prefWidth="558.0" style="-fx-background-color: gray;">
                      <children>
-                        <AnchorPane layoutX="107.0" layoutY="23.0" prefHeight="363.0" prefWidth="370.0" style="-fx-background-radius: 10;" styleClass="AnchorPane" stylesheets="@../styles/style.css">
+                        <AnchorPane layoutX="322.0" layoutY="114.0" prefHeight="363.0" prefWidth="370.0" style="-fx-background-radius: 10;" styleClass="AnchorPane" stylesheets="@../styles/style.css">
                            <children>
-                              <TextField layoutX="93.0" layoutY="25.0" prefHeight="31.0" prefWidth="183.0" promptText="Itt keresd ki a filmet" style="-fx-border-color: transparent; -fx-background-radius: 20px;" />
-                              <Label layoutX="34.0" layoutY="131.0" prefHeight="50.0" prefWidth="302.0" style="-fx-background-radius: 10px; -fx-border-color: black; -fx-border-radius: 10px;">
+                              <TextField fx:id="searchText" layoutX="93.0" layoutY="25.0" prefHeight="31.0" prefWidth="183.0" promptText="Itt keresd ki a filmet" style="-fx-border-color: transparent; -fx-background-radius: 20px;" />
+                              <Label fx:id="searchLabel" layoutX="34.0" layoutY="132.0" prefHeight="49.0" prefWidth="302.0" style="-fx-background-radius: 10px; -fx-border-color: black; -fx-border-radius: 10px;">
                                  <font>
                                     <Font size="1.0" />
                                  </font>
                               </Label>
-                              <Button fx:id="AddButton121" layoutX="141.0" layoutY="278.0" mnemonicParsing="false" onAction="#handleAddButton" prefHeight="31.0" prefWidth="88.0" style="-fx-background-color: #df8e39; -fx-border-color: black; -fx-border-radius: 10px; -fx-background-radius: 10px;" text="Keresés">
+                              <Button fx:id="searchButton" layoutX="141.0" layoutY="220.0" mnemonicParsing="false" onAction="#handleSearchButton" prefHeight="31.0" prefWidth="88.0" style="-fx-background-color: #df8e39; -fx-border-color: black; -fx-border-radius: 10px; -fx-background-radius: 10px;" text="Keresés">
+                                 <font>
+                                    <Font name="Serif Bold" size="15.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="addSearched" disable="true" layoutX="141.0" layoutY="280.0" mnemonicParsing="false" onAction="#handleAddSearchedButton" prefHeight="31.0" prefWidth="88.0" style="-fx-background-color: #df8e39; -fx-border-color: black; -fx-border-radius: 10px; -fx-background-radius: 10px;" text="Hozzáad">
                                  <font>
                                     <Font name="Serif Bold" size="15.0" />
                                  </font>
