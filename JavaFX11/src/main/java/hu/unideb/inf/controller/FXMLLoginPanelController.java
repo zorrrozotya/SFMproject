@@ -65,12 +65,12 @@ public class FXMLLoginPanelController implements Initializable {
         System.out.println(s);
         switch(s){
             case 0 :
-                System.out.println("Sikeres regisztráció!");
+                System.out.println("Sikeres regisztracio!");
                 ErrorRegText.setStyle("-fx-text-fill: green;");
                 ErrorRegText.setText("Sikeres regisztáció!");
                 break;
             case 1 :
-                System.out.println("Már létezik ilyen felhasználó!");
+                System.out.println("Mar letezik ilyen felhasznalo!");
                 ErrorRegText.setText("Már létezik ilyen felhasználó!");
                 break;
             case 2:
@@ -93,17 +93,17 @@ public class FXMLLoginPanelController implements Initializable {
 
         switch(s){
             case 0 :
-                ;System.out.println("Sikeres bejelentkezés!");
+                ;System.out.println("Sikeres bejelentkezes!");
                 ErrorLogText.setStyle("-fx-text-fill: green;");
                 ErrorLogText.setText("Sikeres bejelentkezés!");
                 openAfterLogin();
                 break;
             case 1 :
-                System.out.println("Nincs ilyen felhasználónév!");
+                System.out.println("Nincs ilyen felhasználonev!");
                 ErrorLogText.setText("Nincs ilyen felhasználónév!");
                 break;
             case 2:
-                System.out.println("Téves jelszó!");
+                System.out.println("Teves jelszo!");
                 ErrorLogText.setText("Téves jelszó!");
                 break;
         }
@@ -112,7 +112,7 @@ public class FXMLLoginPanelController implements Initializable {
 
     private void openAfterLogin() throws IOException {
 
-        Parent root = FXMLLoader.load(getClass().getResource("/fxml/after_login.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/after_logino.fxml"));
         Scene scene = new Scene(root);
 
         Stage afterStage = new Stage(StageStyle.DECORATED);
