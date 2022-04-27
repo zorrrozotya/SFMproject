@@ -24,7 +24,7 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-public class FXMLLoginPanelController implements Initializable {
+public class FXMLLoginPanelController extends FXMLAfterLoginController implements Initializable {
 
     @FXML
     private Label ErrorLogText;
@@ -97,6 +97,7 @@ public class FXMLLoginPanelController implements Initializable {
                 ErrorLogText.setStyle("-fx-text-fill: green;");
                 ErrorLogText.setText("Sikeres bejelentkezés!");
                 openAfterLogin();
+
                 break;
             case 1 :
                 System.out.println("Nincs ilyen felhasználonev!");
@@ -112,7 +113,7 @@ public class FXMLLoginPanelController implements Initializable {
 
     private void openAfterLogin() throws IOException {
 
-        Parent root = FXMLLoader.load(getClass().getResource("/fxml/after_logino.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/after_login.fxml"));
         Scene scene = new Scene(root);
 
         Stage afterStage = new Stage(StageStyle.DECORATED);
@@ -125,8 +126,7 @@ public class FXMLLoginPanelController implements Initializable {
         afterStage.setMaxHeight(720);
         afterStage.initModality(Modality.APPLICATION_MODAL);
         afterStage.show();
-
-
+        staticUserLabel.setText(User.currentUserName);
     }
 
 

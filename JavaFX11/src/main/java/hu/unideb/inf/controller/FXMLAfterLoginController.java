@@ -1,6 +1,8 @@
 package hu.unideb.inf.controller;
 
+        import com.sun.xml.fastinfoset.stax.events.CommentEvent;
         import hu.unideb.inf.model.Movies;
+        import hu.unideb.inf.model.User;
         import javafx.event.ActionEvent;
         import javafx.fxml.FXML;
         import javafx.fxml.Initializable;
@@ -16,6 +18,7 @@ package hu.unideb.inf.controller;
         import java.util.ResourceBundle;
 
 public class FXMLAfterLoginController implements Initializable {
+
 
     @FXML
     private Button AddButton;
@@ -54,6 +57,12 @@ public class FXMLAfterLoginController implements Initializable {
     private Label msg1;
 
     @FXML
+    private Label userLabel;
+
+    @FXML
+    public static Label staticUserLabel;
+
+    @FXML
     private Label searchLabel;
 
     @FXML
@@ -61,6 +70,7 @@ public class FXMLAfterLoginController implements Initializable {
 
     @FXML
     private Pane scenePane;
+
 
     @FXML
     void handleAddButton(ActionEvent event) {
@@ -91,7 +101,7 @@ public class FXMLAfterLoginController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        staticUserLabel = userLabel;
     }
 
 }
