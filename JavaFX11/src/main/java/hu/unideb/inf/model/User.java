@@ -12,6 +12,8 @@ import java.util.Locale;
 @Entity
 public class User {
 
+    public static String currentUserName;
+
     @Id
     @GeneratedValue
     private Integer id;
@@ -114,6 +116,7 @@ public class User {
 
                 if(Users.get(i).password.equals(password)){
                     s = 0;
+                    currentUserName = Users.get(i).userName;
                     break;
                     //  --  sikeres bejelentkezés
                 }
