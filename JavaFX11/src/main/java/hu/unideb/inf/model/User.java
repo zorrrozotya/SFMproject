@@ -22,6 +22,7 @@ public class User {
     private int seensum;
     private int screentime;
 
+
     public Integer getId() {
         return id;
     }
@@ -154,4 +155,5 @@ public class User {
         }
         return Users;
     }
+
 }
