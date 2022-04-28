@@ -18,6 +18,12 @@ public class Movies {
     private int LengthMin;
     private String genre;
 
+    List<User> viewers;
+
+    public void addViewers(User u){
+        viewers.add(u);
+    }
+
     public int getRelease() {
         return release;
     }

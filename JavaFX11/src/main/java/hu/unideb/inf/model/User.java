@@ -22,6 +22,11 @@ public class User {
     private int seensum;
     private int screentime;
 
+    List<Movies> seenMovies;
+
+    public void addMovies(Movies m){
+        seenMovies.add(m);
+    }
 
     public Integer getId() {
         return id;
