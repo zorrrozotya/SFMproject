@@ -19,6 +19,8 @@ package hu.unideb.inf.controller;
 
 public class FXMLAfterLoginController implements Initializable {
 
+    @FXML
+    private Button addSearchedButton;
 
     @FXML
     private Button AddButton;
@@ -73,7 +75,7 @@ public class FXMLAfterLoginController implements Initializable {
 
 
     @FXML
-    void handleAddButton(ActionEvent event) {
+    void handleAddSearchedButton(ActionEvent event) {
 
     }
 
@@ -86,7 +88,7 @@ public class FXMLAfterLoginController implements Initializable {
         }
         else{
             searchLabel.setText(m.getTitle());
-            addSearched.setDisable(false);
+            addSearchedButton.setVisible(true);
         }
     }
 
@@ -104,4 +106,7 @@ public class FXMLAfterLoginController implements Initializable {
         staticUserLabel = userLabel;
     }
 
+    public void handleAddButton(ActionEvent actionEvent) {
+
+    }
 }
