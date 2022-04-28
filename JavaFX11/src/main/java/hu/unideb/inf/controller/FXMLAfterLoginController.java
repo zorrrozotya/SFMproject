@@ -85,6 +85,7 @@ public class FXMLAfterLoginController implements Initializable {
         Movies m = Movies.searchMovie(searchText.getText());
         if(m == null){
             searchLabel.setText("Nincs ilyen film");
+            addSearchedButton.setVisible(false);
         }
         else{
             searchLabel.setText(m.getTitle());
