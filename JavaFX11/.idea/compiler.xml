@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="JavaFX11" />
+        <module name="JavaFX11 másolata" />
       </profile>
     </annotationProcessing>
   </component>
