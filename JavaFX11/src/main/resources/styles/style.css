@@ -46,8 +46,8 @@
 .label{
     -fx-border-color: rgb(223, 142, 57);
     -fx-background-color:rgb(223, 142, 57);
-    -fx-alignment: center-left;
-    -fx-font-size: 25px;
+    -fx-alignment: center;
+    -fx-font-size: 18px;
     -fx-border-radius: 10px;
 }
 .Logoutlabel{

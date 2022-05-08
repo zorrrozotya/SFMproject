@@ -1,5 +1,6 @@
 package hu.unideb.inf.model;
 
+import javax.management.relation.Relation;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -46,6 +47,25 @@ public class JpaUserDao implements UserDAO{
     @Override
     public void updateMovie(Movies a) {
         saveMovie(a);
+    }
+
+    @Override
+    public void saveRelation(Relations a) {
+        entityManager.getTransaction().begin();
+        entityManager.persist(a);
+        entityManager.getTransaction().commit();
+    }
+
+    @Override
+    public void deleteRelation(Relations a) {
+        entityManager.getTransaction().begin();
+        entityManager.remove(a);
+        entityManager.getTransaction().commit();
+    }
+
+    @Override
+    public void updateRelation(Relations a) {
+        saveRelation(a);
     }
 
 

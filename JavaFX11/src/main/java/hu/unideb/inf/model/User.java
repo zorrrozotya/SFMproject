@@ -1,8 +1,8 @@
 package hu.unideb.inf.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import hu.unideb.inf.controller.FXMLAfterLoginController;
+
+import javax.persistence.*;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -13,6 +13,7 @@ import java.util.Locale;
 public class User {
 
     public static String currentUserName;
+    public static int currentUserId;
 
     @Id
     @GeneratedValue
@@ -22,14 +23,9 @@ public class User {
     private int seensum;
     private int screentime;
 
-    List<Movies> seenMovies;
-
-    public void addMovies(Movies m){
-        seenMovies.add(m);
-    }
 
     public Integer getId() {
-        return id;
+        return this.id;
     }
 
     public void setId(final Integer id) {
@@ -122,7 +118,9 @@ public class User {
 
                 if(Users.get(i).password.equals(password)){
                     s = 0;
+
                     currentUserName = Users.get(i).userName;
+
                     break;
                     //  --  sikeres bejelentkezés
                 }

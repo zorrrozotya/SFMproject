@@ -2,19 +2,18 @@ package hu.unideb.inf.controller;
 
         import com.sun.xml.fastinfoset.stax.events.CommentEvent;
         import hu.unideb.inf.model.Movies;
+        import hu.unideb.inf.model.Relations;
         import hu.unideb.inf.model.User;
         import javafx.event.ActionEvent;
         import javafx.fxml.FXML;
         import javafx.fxml.Initializable;
-        import javafx.scene.control.Button;
-        import javafx.scene.control.Label;
-        import javafx.scene.control.TabPane;
-        import javafx.scene.control.TextField;
+        import javafx.scene.control.*;
         import javafx.scene.layout.Pane;
         import javafx.stage.Stage;
 
         import java.net.URL;
         import java.sql.SQLException;
+        import java.util.List;
         import java.util.ResourceBundle;
 
 public class FXMLAfterLoginController implements Initializable {
@@ -75,8 +74,19 @@ public class FXMLAfterLoginController implements Initializable {
 
 
     @FXML
-    void handleAddSearchedButton(ActionEvent event) {
+    private ListView<String> moveListDisplay;
 
+    public static Movies lastSeached;
+
+
+
+    @FXML
+    void handleAddSearchedButton(ActionEvent event) {
+        System.out.println("ezeket adja hozza a relationshoz");
+        System.out.println("user: "+User.currentUserName);
+        System.out.println("Movie: "+lastSeached.getTitle());
+        Relations relation = new Relations(User.currentUserName, lastSeached.getTitle());
+        Relations.addRelation(relation);
     }
 
     @FXML
@@ -89,6 +99,8 @@ public class FXMLAfterLoginController implements Initializable {
         }
         else{
             searchLabel.setText(m.getTitle());
+
+            lastSeached = m;
             addSearchedButton.setVisible(true);
         }
     }
@@ -105,6 +117,17 @@ public class FXMLAfterLoginController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         staticUserLabel = userLabel;
+
+        List<String> seenMovies = null;
+        System.out.println("Neki kell hozzaadni: "+userLabel.getText());
+        try {
+            seenMovies = Relations.loadMovies(User.currentUserName);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        System.out.println("Ezeket kell hozzaadni:");
+        
+        moveListDisplay.getItems().addAll(seenMovies);
     }
 
     public void handleAddButton(ActionEvent actionEvent) {
