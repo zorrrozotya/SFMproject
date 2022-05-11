@@ -159,4 +159,8 @@ public class User {
         return Users;
     }
 
+    public void setSeenSum(String userName){
+
+    }
+
 }
