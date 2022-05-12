@@ -35,6 +35,9 @@ public class FXMLAfterLoginController implements Initializable {
 
     @FXML
     private Button searchButton;
+    
+    @FXML
+    private Button Logoutbutton;
 
     @FXML
     private TextField FilmDescription;
@@ -49,7 +52,13 @@ public class FXMLAfterLoginController implements Initializable {
     private TextField FilmName;
 
     @FXML
-    private Button Logoutbutton;
+    private TextField FilmRelease;
+
+    @FXML
+    private TextField FilmLengthH;
+
+    @FXML
+    private TextField FilmLengthMin;
 
     @FXML
     private Label msg;
@@ -64,10 +73,19 @@ public class FXMLAfterLoginController implements Initializable {
     private Label userLabel;
 
     @FXML
-    public static Label staticUserLabel;
+    private Label seensumLabel;
+
+    @FXML
+    private Label stLabel;
 
     @FXML
     private Label searchLabel;
+
+    @FXML
+    private Label ErrorRegText;
+
+    @FXML
+    public static Label staticUserLabel;
 
     @FXML
     private TabPane tabpane;
@@ -77,26 +95,18 @@ public class FXMLAfterLoginController implements Initializable {
 
     @FXML
     private ListView<String> moveListDisplay;
-
-    @FXML
-    private Label seensumLabel;
-
-    @FXML
-    private Label stLabel;
-
-
-    public static Movies lastSeached;
+    
+    public static Movies lastSearched;
 
     public FXMLAfterLoginController() {
     }
-
 
     @FXML
     void handleAddSearchedButton(ActionEvent event) throws SQLException, InterruptedException {
         System.out.println("ezeket adja hozza a relationshoz");
         System.out.println("user: "+User.currentUserName);
-        System.out.println("Movie: "+lastSeached.getTitle());
-        Relations relation = new Relations(User.currentUserName, lastSeached.getTitle());
+        System.out.println("Movie: "+lastSearched.getTitle());
+        Relations relation = new Relations(User.currentUserName, lastSearched.getTitle());
         int success = Relations.addRelation(relation);
         if(success == 0 ) {
             AddMovieErrorLabel.setVisible(true);
@@ -116,7 +126,7 @@ public class FXMLAfterLoginController implements Initializable {
         else{
             searchLabel.setText(m.getTitle());
 
-            lastSeached = m;
+            lastSearched = m;
             addSearchedButton.setVisible(true);
 
         }
@@ -166,8 +176,6 @@ public class FXMLAfterLoginController implements Initializable {
         List<Movies> osszes = Movies.getMovies();
         List<String> seenMovies = Relations.loadMovies(User.currentUserName);
 
-
-
         for(Movies m : osszes){
             if(seenMovies.contains(m.getTitle())){
 
@@ -176,7 +184,6 @@ public class FXMLAfterLoginController implements Initializable {
             }
         }
 
-
         stLabel.setText(hvalue+" órát és "+minvalue+" percet töltöttél filmnézéssel");
 
     }
@@ -184,12 +191,46 @@ public class FXMLAfterLoginController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+
         staticUserLabel = userLabel;
 
         refreshList();
+
     }
 
     public void handleAddButton(ActionEvent actionEvent) {
+
+        System.out.println("Film hozzáadás gomb megnyomva");
+        System.out.println("Film cime: "+FilmName.getText());
+        System.out.println("Film mufaj: "+FilmGenre.getText());
+        System.out.println("Film hossz ora: "+FilmDescription.getText());
+        System.out.println("Film hossz perc: "+FilmLengthH.getText());
+        System.out.println("Film leiras: "+FilmLengthMin.getText());
+
+
+        int s = Movies.Movie_Register(FilmName.getText(),FilmGenre.getText(),
+                                    FilmRelease.getText(),
+                                    FilmLengthH.getText(),
+                                    FilmLengthMin.getText(),
+                                    FilmDescription.getText());
+
+        System.out.println(s);
+        switch(s){
+            case 0 :
+                System.out.println("Sikeres film regisztracio!");
+                ErrorRegText.setStyle("-fx-text-fill: green;");
+                ErrorRegText.setText("Sikeres film regisztáció!");
+                break;
+            case 1 :
+                System.out.println("Mar letezik ilyen film!");
+                ErrorRegText.setText("Már létezik ilyen film!");
+                break;
+            case 2:
+                System.out.println("Nem megfelelő formátumú adatok!");
+                ErrorRegText.setText("Nem megfelelő formátumú adatok!");
+                break;
+        }
+
 
     }
 }
