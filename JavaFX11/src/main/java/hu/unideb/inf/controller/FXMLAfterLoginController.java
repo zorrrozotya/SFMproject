@@ -75,19 +75,20 @@ public class FXMLAfterLoginController implements Initializable {
     @FXML
     private Pane scenePane;
 
-
     @FXML
     private ListView<String> moveListDisplay;
 
     @FXML
-    private Label seensum;
+    private Label seensumLabel;
 
     @FXML
-    private Label screentime;
+    private Label stLabel;
 
 
     public static Movies lastSeached;
 
+    public FXMLAfterLoginController() {
+    }
 
 
     @FXML
@@ -141,8 +142,43 @@ public class FXMLAfterLoginController implements Initializable {
             e.printStackTrace();
         }
         System.out.println("Ezeket kell hozzaadni:");
-
+        Movies.seensum = seenMovies.size();
         moveListDisplay.getItems().addAll(seenMovies);
+        setSeenSum();
+        try {
+            setScreenTime();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void setSeenSum(){
+        int value = 0;
+        value = Movies.seensum;
+        seensumLabel.setText(value+" filmet láttál eddig");
+    }
+
+    public void setScreenTime() throws SQLException {
+
+        int hvalue = 0;
+        int minvalue = 0;
+
+        List<Movies> osszes = Movies.getMovies();
+        List<String> seenMovies = Relations.loadMovies(User.currentUserName);
+
+
+
+        for(Movies m : osszes){
+            if(seenMovies.contains(m.getTitle())){
+
+                hvalue+=m.getLengthHour();
+                minvalue+=m.getLengthMin();
+            }
+        }
+
+
+        stLabel.setText(hvalue+" órát és "+minvalue+" percet töltöttél filmnézéssel");
+
     }
 
 
@@ -151,7 +187,6 @@ public class FXMLAfterLoginController implements Initializable {
         staticUserLabel = userLabel;
 
         refreshList();
-
     }
 
     public void handleAddButton(ActionEvent actionEvent) {
