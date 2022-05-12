@@ -24,19 +24,10 @@ public class Movies {
     private String About;
 
 
-    public void setRelease(int release) {
-        this.release = release;
-    }
-
-
-
+    //getterek és setterek
 
     public Integer getId() {
         return this.id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     public String getTitle() {
@@ -63,6 +54,13 @@ public class Movies {
         this.LengthMin = lengthm;
     }
 
+    public void setRelease(int release) {
+        this.release = release;
+    }
+
+    public int getRelease() {
+        return release;
+    }
 
     public String getGenre() {
         return genre;
@@ -118,6 +116,49 @@ public class Movies {
             Movies.add(movie);
         }
         return Movies;
+    }
+
+    public static int Movie_Register(String title, String genre, String release, String lengthh, String lengthmin, String description)
+    {
+
+        int s = 0;  // 0 = sikeres regisztráció,
+        // 1 = Már létezik ilyen felhasználó ,
+        // 2 = Nem megfelelő formátumú adatok
+
+        if(description.length() < 10 || description.length() > 200){
+            s = 2; //  --  nem megfelelő a formátum
+        }
+        else{
+            try (UserDAO uDAO = new JpaUserDao())
+            {
+                List<Movies> movies = getMovies();
+                for (int i = 0; i < movies.size(); i++) {
+                    if(movies.get(i).getTitle().equalsIgnoreCase(title))
+                    {
+                        s = 1; //  --  ilyen film már van
+                        break;
+                    }
+                }
+
+                if(s == 0){
+                    Movies movie = new Movies();
+                    movie.setTitle(title);
+                    movie.setGenre(genre);
+                    movie.setRelease(Integer.parseInt(release));
+                    movie.setLengthHour(Integer.parseInt(lengthh));
+                    movie.setLengthMin(Integer.parseInt(lengthmin));
+                    movie.setAbout(description);
+
+                    uDAO.saveMovie(movie);
+                }
+
+
+            } catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+
+        return s;
     }
 
 }
