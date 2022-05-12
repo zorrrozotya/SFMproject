@@ -150,17 +150,25 @@ public class User {
         while (resultSet.next())
         {
             User user = new User();
+            int id = resultSet.getInt("id");
             String userName = resultSet.getString("userName");
             String password = resultSet.getString("password");
+            int seenSum = resultSet.getInt("SeenSum");
+            int screenTime = resultSet.getInt("ScreenTime");
             user.setUserName(userName);
             user.setPassword(password);
+            user.setScreentime(screenTime);
+            user.setSeensum(seenSum);
+            user.setId(id);
+
             Users.add(user);
         }
         return Users;
     }
 
-    public void setSeenSum(String userName){
 
-    }
+
+
+
 
 }

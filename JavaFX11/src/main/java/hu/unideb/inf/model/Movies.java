@@ -11,6 +11,8 @@ import java.util.List;
 @Entity
 public class Movies {
 
+    public static int seensum;
+
     @Id
     @GeneratedValue
     private Integer id;
@@ -107,8 +109,12 @@ public class Movies {
             Movies movie = new Movies();
             String title = resultSet.getString("title");
             int release = Integer.parseInt(resultSet.getString("release"));
+            int lengthh = resultSet.getInt("lengthhour");
+            int lengthm = resultSet.getInt("lengthmin");
             movie.setTitle(title);
             movie.setRelease(release);
+            movie.setLengthHour(lengthh);
+            movie.setLengthMin(lengthm);
             Movies.add(movie);
         }
         return Movies;
