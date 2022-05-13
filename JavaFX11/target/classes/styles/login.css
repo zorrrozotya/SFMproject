@@ -43,3 +43,13 @@
     -fx-focus-color:none;
 }
 
+.button{
+	-fx-background-color: #df8e39;
+	-fx-border-color: black;
+	-fx-border-radius: 10px;
+	-fx-background-radius: 10px;
+}
+
+.button:pressed{
+	-fx-background-color: #c47828;
+}
