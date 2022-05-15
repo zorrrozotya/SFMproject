@@ -1,8 +1,8 @@
 hu\unideb\inf\model\User.class
 hu\unideb\inf\controller\FXMLLoginPanelController.class
-hu\unideb\inf\model\Relations.class
 hu\unideb\inf\model\UserDAO.class
+hu\unideb\inf\model\Movies.class
+hu\unideb\inf\model\Relations.class
 hu\unideb\inf\MainApp.class
 hu\unideb\inf\controller\FXMLAfterLoginController.class
-hu\unideb\inf\model\Movies.class
 hu\unideb\inf\model\JpaUserDao.class

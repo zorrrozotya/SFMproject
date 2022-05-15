@@ -10,6 +10,7 @@ package hu.unideb.inf.controller;
         import javafx.scene.control.*;
         import javafx.scene.layout.Pane;
         import javafx.stage.Stage;
+        import org.hibernate.tool.schema.internal.exec.ScriptTargetOutputToFile;
 
         import java.net.URL;
         import java.sql.SQLException;
@@ -145,13 +146,11 @@ public class FXMLAfterLoginController implements Initializable {
         moveListDisplay.getItems().clear();
 
         List<String> seenMovies = null;
-        System.out.println("Neki kell hozzaadni: "+userLabel.getText());
         try {
             seenMovies = Relations.loadMovies(User.currentUserName);
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        System.out.println("Ezeket kell hozzaadni:");
         Movies.seensum = seenMovies.size();
         moveListDisplay.getItems().addAll(seenMovies);
         setSeenSum();
@@ -184,6 +183,11 @@ public class FXMLAfterLoginController implements Initializable {
             }
         }
 
+        System.out.println(minvalue);
+        System.out.println("minvalue/60 "+minvalue/60);
+        System.out.println("minvalue%60 "+minvalue%60);
+        hvalue+=minvalue/60;
+        minvalue=minvalue%60;
         stLabel.setText(hvalue+" órát és "+minvalue+" percet töltöttél filmnézéssel");
 
     }
