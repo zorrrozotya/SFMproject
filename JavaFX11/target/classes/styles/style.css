@@ -71,6 +71,8 @@
 	-fx-background-radius: 10px;
 }
 
+
 .button:pressed{
-	-fx-background-color: #c47828;
+    -fx-background-color: #c47828;
+
 }

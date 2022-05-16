@@ -71,10 +71,12 @@ public class FXMLLoginPanelController extends FXMLAfterLoginController implement
                 break;
             case 1 :
                 System.out.println("Mar letezik ilyen felhasznalo!");
+                ErrorRegText.setStyle("-fx-text-fill: red;");
                 ErrorRegText.setText("Már létezik ilyen felhasználó!");
                 break;
             case 2:
                 System.out.println("Nem megfelelő formátumú adatok!");
+                ErrorRegText.setStyle("-fx-text-fill: red;");
                 ErrorRegText.setText("Nem megfelelő formátumú adatok!");
                 break;
         }
@@ -101,10 +103,12 @@ public class FXMLLoginPanelController extends FXMLAfterLoginController implement
                 break;
             case 1 :
                 System.out.println("Nincs ilyen felhasználonev!");
+                ErrorRegText.setStyle("-fx-text-fill: red;");
                 ErrorLogText.setText("Nincs ilyen felhasználónév!");
                 break;
             case 2:
                 System.out.println("Teves jelszo!");
+                ErrorRegText.setStyle("-fx-text-fill: red;");
                 ErrorLogText.setText("Téves jelszó!");
                 break;
         }

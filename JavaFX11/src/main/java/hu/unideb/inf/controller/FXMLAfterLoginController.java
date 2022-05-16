@@ -23,6 +23,9 @@ public class FXMLAfterLoginController implements Initializable {
     private Button addSearchedButton;
 
     @FXML
+    private Button DeleteButton;
+
+    @FXML
     private Button AddButton;
 
     @FXML
@@ -32,7 +35,7 @@ public class FXMLAfterLoginController implements Initializable {
     private Button addSearched;
 
     @FXML
-    private Button AddButton12;
+    private Button searchToDeleteButton;
 
     @FXML
     private Button searchButton;
@@ -51,6 +54,9 @@ public class FXMLAfterLoginController implements Initializable {
 
     @FXML
     private TextField FilmName;
+
+    @FXML
+    private TextField searchToDeleteText;
 
     @FXML
     private TextField FilmRelease;
@@ -84,6 +90,13 @@ public class FXMLAfterLoginController implements Initializable {
 
     @FXML
     private Label ErrorRegText;
+
+    @FXML
+    private Label searchToDeleteLabel;
+
+    @FXML
+    private Label DeleteDisplayLabel;
+
 
     @FXML
     public static Label staticUserLabel;
@@ -184,10 +197,9 @@ public class FXMLAfterLoginController implements Initializable {
         }
 
         System.out.println(minvalue);
-        System.out.println("minvalue/60 "+minvalue/60);
-        System.out.println("minvalue%60 "+minvalue%60);
-        hvalue+=minvalue/60;
-        minvalue=minvalue%60;
+
+        hvalue=Movies.calculateScreenTimeHour(hvalue,minvalue);
+        minvalue=Movies.calculateScreenTimeMin(hvalue,minvalue);
         stLabel.setText(hvalue+" órát és "+minvalue+" percet töltöttél filmnézéssel");
 
     }
@@ -227,14 +239,51 @@ public class FXMLAfterLoginController implements Initializable {
                 break;
             case 1 :
                 System.out.println("Mar letezik ilyen film!");
+                ErrorRegText.setStyle("-fx-text-fill: red;");
                 ErrorRegText.setText("Már létezik ilyen film!");
                 break;
             case 2:
                 System.out.println("Nem megfelelő formátumú adatok!");
+                ErrorRegText.setStyle("-fx-text-fill: red;");
                 ErrorRegText.setText("Nem megfelelő formátumú adatok!");
                 break;
         }
 
 
     }
+
+    public void handleDeleteButton(ActionEvent actionEvent) throws SQLException {
+        System.out.println("torles megnyomva");
+        String title = searchToDeleteLabel.getText();
+        int s = Movies.deleteMovie(title);
+
+        switch(s){
+            case 0 :
+                System.out.println("Sikeres film torles!");
+                DeleteDisplayLabel.setStyle("-fx-text-fill: green;");
+                DeleteDisplayLabel.setText("Sikeres film törlés!");
+                break;
+            case 1 :
+                System.out.println("Sikertelen film torles!");
+                DeleteDisplayLabel.setStyle("-fx-text-fill: red;");
+                DeleteDisplayLabel.setText("Sikertelen film törlés!");
+                break;
+        }
+        refreshList();
+    }
+
+    public void handleSearchToDeleteButton(ActionEvent actionEvent) throws SQLException {
+        System.out.println("kereses torleshez megnyomva");
+
+        Movies m = Movies.searchMovie(searchToDeleteText.getText());
+        if(m == null){
+            searchToDeleteLabel.setText("Nincs ilyen film");
+            DeleteButton.setVisible(false);
+        }
+        else {
+            searchToDeleteLabel.setText(m.getTitle());
+            DeleteButton.setVisible(true);
+        }
+    }
+
 }

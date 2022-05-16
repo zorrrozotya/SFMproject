@@ -78,6 +78,21 @@ public class Movies {
         About = about;
     }
 
+    //screentime szamitas h
+    public static int calculateScreenTimeHour(int h,int m){
+        int hour = h + m/60;
+        return hour;
+    }
+    //screentime szamitas min
+    public static int calculateScreenTimeMin(int h, int m){
+        int min= m%60;
+        return min;
+    }
+
+
+
+
+
 
     //Film keresése
     public static Movies searchMovie(String searchedTitle) throws SQLException {
@@ -118,6 +133,7 @@ public class Movies {
         return Movies;
     }
 
+    //Uj film regisztrálása
     public static int Movie_Register(String title, String genre, String release, String lengthh, String lengthmin, String description)
     {
 
@@ -157,6 +173,26 @@ public class Movies {
                 e.printStackTrace();
             }
         }
+
+        return s;
+    }
+
+
+    //Film torlese
+    public static int deleteMovie(String title) throws SQLException {
+
+        int s = 0;
+
+        String jdbcURL = "jdbc:h2:file:~/my_database";
+
+        Connection connection = DriverManager.getConnection(jdbcURL, "sa", "");
+        String sql = "DELETE FROM MOVIES WHERE TITLE='"+title+"'";
+        String sql2 = "DELETE FROM RELATIONS WHERE MOVIE_TITLE='"+title+"'";
+
+        Statement statement = connection.createStatement();
+        statement.execute(sql);
+        statement.execute(sql2);
+
 
         return s;
     }
