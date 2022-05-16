@@ -91,7 +91,7 @@
                               </Label>
                               <TextField fx:id="FilmLengthH" layoutX="86.0" layoutY="162.0" prefHeight="26.0" prefWidth="90.0" promptText="Hossz: Óra" style="-fx-background-radius: 10;" />
                               <TextField fx:id="FilmLengthMin" layoutX="193.0" layoutY="162.0" prefHeight="26.0" prefWidth="90.0" promptText="Hossz: Perc" style="-fx-background-radius: 10;" />
-                              <Label fx:id="ErrorRegText" layoutX="50.0" layoutY="271.0" prefHeight="30.0" prefWidth="286.0" style="-fx-background-color: transparent; -fx-border-color: transparent;" />
+                              <Label fx:id="ErrorRegText" layoutX="50.0" layoutY="271.0" prefHeight="30.0" prefWidth="286.0" style="-fx-background-color: #E2AF44; -fx-border-color: transparent;" textFill="RED" />
                               <TextField fx:id="FilmRelease" layoutX="193.0" layoutY="125.0" prefHeight="26.0" prefWidth="99.0" promptText="Kiadás éve" style="-fx-background-radius: 10;" />
                            </children>
                         </AnchorPane>
@@ -104,7 +104,7 @@
                      <children>
                         <AnchorPane layoutX="322.0" layoutY="114.0" prefHeight="363.0" prefWidth="370.0" styleClass="AnchorPane" stylesheets="@../styles/style.css">
                            <children>
-                              <Button fx:id="AddButton1" layoutX="141.0" layoutY="267.0" mnemonicParsing="false" onAction="#handleAddButton" prefHeight="31.0" prefWidth="88.0" stylesheets="@../styles/style.css" text="Eltávolít">
+                              <Button fx:id="DeleteButton" layoutX="141.0" layoutY="267.0" mnemonicParsing="false" onAction="#handleDeleteButton" prefHeight="31.0" prefWidth="88.0" stylesheets="@../styles/style.css" text="Eltávolít" visible="false">
                                  <font>
                                     <Font name="Serif Bold" size="15.0" />
                                  </font>
@@ -112,13 +112,13 @@
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
                               </Button>
-                              <TextField layoutX="93.0" layoutY="22.0" prefHeight="31.0" prefWidth="183.0" promptText="Itt keresd ki a filmet" style="-fx-border-color: transparent; -fx-background-radius: 20px;" />
-                              <Label layoutX="33.0" layoutY="131.0" prefHeight="50.0" prefWidth="302.0" style="-fx-background-radius: 10px; -fx-border-color: black; -fx-border-radius: 10px;">
+                              <TextField fx:id="searchToDeleteText" layoutX="93.0" layoutY="22.0" prefHeight="31.0" prefWidth="183.0" promptText="Itt keresd ki a filmet" style="-fx-border-color: transparent; -fx-background-radius: 20px;" />
+                              <Label fx:id="searchToDeleteLabel" layoutX="33.0" layoutY="131.0" prefHeight="50.0" prefWidth="302.0" style="-fx-background-radius: 10px; -fx-border-color: black; -fx-border-radius: 10px;">
                                  <font>
                                     <Font size="1.0" />
                                  </font>
                               </Label>
-                              <Button fx:id="AddButton12" layoutX="141.0" layoutY="70.0" mnemonicParsing="false" onAction="#handleAddButton" prefHeight="31.0" prefWidth="88.0" stylesheets="@../styles/style.css" text="Keresés">
+                              <Button fx:id="SearchToDeleteButton" layoutX="141.0" layoutY="70.0" mnemonicParsing="false" onAction="#handleSearchToDeleteButton" prefHeight="31.0" prefWidth="88.0" stylesheets="@../styles/style.css" text="Keresés">
                                  <font>
                                     <Font name="Serif Bold" size="15.0" />
                                  </font>
@@ -126,6 +126,7 @@
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
                               </Button>
+                              <Label fx:id="DeleteDisplayLabel" layoutX="74.0" layoutY="211.0" prefHeight="29.0" prefWidth="220.0" style="-fx-background-color: transparent; -fx-border-color: transparent;" />
                            </children>
                         </AnchorPane>
                      </children></AnchorPane>
