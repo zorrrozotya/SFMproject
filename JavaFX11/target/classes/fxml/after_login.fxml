@@ -104,7 +104,7 @@
                      <children>
                         <AnchorPane layoutX="322.0" layoutY="114.0" prefHeight="363.0" prefWidth="370.0" styleClass="AnchorPane" stylesheets="@../styles/style.css">
                            <children>
-                              <Button fx:id="DeleteButton" layoutX="141.0" layoutY="267.0" mnemonicParsing="false" onAction="#handleDeleteButton" prefHeight="31.0" prefWidth="88.0" stylesheets="@../styles/style.css" text="Eltávolít">
+                              <Button fx:id="DeleteButton" layoutX="141.0" layoutY="267.0" mnemonicParsing="false" onAction="#handleDeleteButton" prefHeight="31.0" prefWidth="88.0" stylesheets="@../styles/style.css" text="Eltávolít" visible="false">
                                  <font>
                                     <Font name="Serif Bold" size="15.0" />
                                  </font>

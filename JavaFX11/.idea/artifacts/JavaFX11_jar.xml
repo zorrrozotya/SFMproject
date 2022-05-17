@@ -1,0 +1,64 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="JavaFX11:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/JavaFX11_jar</output-path>
+    <root id="archive" name="JavaFX11.jar">
+      <element id="module-output" name="JavaFX11" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-fxml/11/javafx-fxml-11-win.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-graphics/11/javafx-graphics-11-win.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-controls/11/javafx-controls-11.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/net/bytebuddy/byte-buddy/1.9.11/byte-buddy-1.9.11.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/javassist/javassist/3.24.0-GA/javassist-3.24.0-GA.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/hibernate/hibernate-core/5.4.4.Final/hibernate-core-5.4.4.Final.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-controls/11/javafx-controls-11-win.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-base/11/javafx-base-11.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jvnet/staxex/stax-ex/1.8/stax-ex-1.8.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/dom4j/dom4j/2.1.1/dom4j-2.1.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/javax/persistence/javax.persistence-api/2.2/javax.persistence-api-2.2.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jboss/jandex/2.0.5.Final/jandex-2.0.5.Final.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-graphics/11/javafx-graphics-11.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/javax/activation/javax.activation-api/1.2.0/javax.activation-api-1.2.0.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jboss/logging/jboss-logging/3.3.2.Final/jboss-logging-3.3.2.Final.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/javax/xml/bind/jaxb-api/2.3.1/jaxb-api-2.3.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/h2database/h2/1.4.199/h2-1.4.199.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/hibernate/common/hibernate-commons-annotations/5.1.0.Final/hibernate-commons-annotations-5.1.0.Final.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/glassfish/jaxb/jaxb-runtime/2.3.1/jaxb-runtime-2.3.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-base/11/javafx-base-11-win.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/sun/istack/istack-commons-runtime/3.0.7/istack-commons-runtime-3.0.7.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/sun/xml/fastinfoset/FastInfoset/1.2.15/FastInfoset-1.2.15.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/glassfish/jaxb/txw2/2.3.1/txw2-2.3.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/hibernate/hibernate-entitymanager/5.4.4.Final/hibernate-entitymanager-5.4.4.Final.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-fxml/11/javafx-fxml-11.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/com/fasterxml/classmate/1.3.4/classmate-1.3.4.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/jboss/spec/javax/transaction/jboss-transaction-api_1.2_spec/1.1.1.Final/jboss-transaction-api_1.2_spec-1.1.1.Final.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/antlr/antlr/2.7.7/antlr-2.7.7.jar" path-in-jar="/" />
+      <element id="library" level="project" name="Maven: antlr:antlr:2.7.7" />
+      <element id="library" level="project" name="Maven: com.fasterxml:classmate:1.3.4" />
+      <element id="library" level="project" name="Maven: com.h2database:h2:1.4.199" />
+      <element id="library" level="project" name="Maven: com.sun.istack:istack-commons-runtime:3.0.7" />
+      <element id="library" level="project" name="Maven: com.sun.xml.fastinfoset:FastInfoset:1.2.15" />
+      <element id="library" level="project" name="Maven: javax.activation:javax.activation-api:1.2.0" />
+      <element id="library" level="project" name="Maven: javax.persistence:javax.persistence-api:2.2" />
+      <element id="library" level="project" name="Maven: javax.xml.bind:jaxb-api:2.3.1" />
+      <element id="library" level="project" name="Maven: net.bytebuddy:byte-buddy:1.9.11" />
+      <element id="library" level="project" name="Maven: org.dom4j:dom4j:2.1.1" />
+      <element id="library" level="project" name="Maven: org.glassfish.jaxb:jaxb-runtime:2.3.1" />
+      <element id="library" level="project" name="Maven: org.glassfish.jaxb:txw2:2.3.1" />
+      <element id="library" level="project" name="Maven: org.hibernate.common:hibernate-commons-annotations:5.1.0.Final" />
+      <element id="library" level="project" name="Maven: org.hibernate:hibernate-core:5.4.4.Final" />
+      <element id="library" level="project" name="Maven: org.hibernate:hibernate-entitymanager:5.4.4.Final" />
+      <element id="library" level="project" name="Maven: org.javassist:javassist:3.24.0-GA" />
+      <element id="library" level="project" name="Maven: org.jboss.logging:jboss-logging:3.3.2.Final" />
+      <element id="library" level="project" name="Maven: org.jboss.spec.javax.transaction:jboss-transaction-api_1.2_spec:1.1.1.Final" />
+      <element id="library" level="project" name="Maven: org.jboss:jandex:2.0.5.Final" />
+      <element id="library" level="project" name="Maven: org.jvnet.staxex:stax-ex:1.8" />
+      <element id="library" level="project" name="Maven: org.openjfx:javafx-base:11" />
+      <element id="library" level="project" name="Maven: org.openjfx:javafx-base:win:11" />
+      <element id="library" level="project" name="Maven: org.openjfx:javafx-controls:11" />
+      <element id="library" level="project" name="Maven: org.openjfx:javafx-controls:win:11" />
+      <element id="library" level="project" name="Maven: org.openjfx:javafx-fxml:11" />
+      <element id="library" level="project" name="Maven: org.openjfx:javafx-fxml:win:11" />
+      <element id="library" level="project" name="Maven: org.openjfx:javafx-graphics:11" />
+      <element id="library" level="project" name="Maven: org.openjfx:javafx-graphics:win:11" />
+    </root>
+  </artifact>
+</component>
