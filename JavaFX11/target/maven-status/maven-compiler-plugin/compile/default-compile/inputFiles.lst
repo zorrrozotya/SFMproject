@@ -1,8 +1,9 @@
-C:\Users\zsote\Desktop\sfmproject\SFMproject\JavaFX11\src\main\java\hu\unideb\inf\model\UserDAO.java
-C:\Users\zsote\Desktop\sfmproject\SFMproject\JavaFX11\src\main\java\hu\unideb\inf\model\Movies.java
-C:\Users\zsote\Desktop\sfmproject\SFMproject\JavaFX11\src\main\java\hu\unideb\inf\MainApp.java
-C:\Users\zsote\Desktop\sfmproject\SFMproject\JavaFX11\src\main\java\hu\unideb\inf\model\User.java
-C:\Users\zsote\Desktop\sfmproject\SFMproject\JavaFX11\src\main\java\hu\unideb\inf\controller\FXMLLoginPanelController.java
-C:\Users\zsote\Desktop\sfmproject\SFMproject\JavaFX11\src\main\java\hu\unideb\inf\model\JpaUserDao.java
-C:\Users\zsote\Desktop\sfmproject\SFMproject\JavaFX11\src\main\java\hu\unideb\inf\controller\FXMLAfterLoginController.java
-C:\Users\zsote\Desktop\sfmproject\SFMproject\JavaFX11\src\main\java\hu\unideb\inf\model\Relations.java
+D:\Egyetem\mernokiszoftver\Projekt\SFMproject\JavaFX11\src\main\java\hu\unideb\inf\model\Relations.java
+D:\Egyetem\mernokiszoftver\Projekt\SFMproject\JavaFX11\src\main\java\hu\unideb\inf\model\UserDAO.java
+D:\Egyetem\mernokiszoftver\Projekt\SFMproject\JavaFX11\src\main\java\hu\unideb\inf\model\Movies.java
+D:\Egyetem\mernokiszoftver\Projekt\SFMproject\JavaFX11\src\main\java\hu\unideb\inf\controller\FXMLLoginPanelController.java
+D:\Egyetem\mernokiszoftver\Projekt\SFMproject\JavaFX11\src\main\java\hu\unideb\inf\Main.java
+D:\Egyetem\mernokiszoftver\Projekt\SFMproject\JavaFX11\src\main\java\hu\unideb\inf\model\User.java
+D:\Egyetem\mernokiszoftver\Projekt\SFMproject\JavaFX11\src\main\java\hu\unideb\inf\controller\FXMLAfterLoginController.java
+D:\Egyetem\mernokiszoftver\Projekt\SFMproject\JavaFX11\src\main\java\hu\unideb\inf\MainApp.java
+D:\Egyetem\mernokiszoftver\Projekt\SFMproject\JavaFX11\src\main\java\hu\unideb\inf\model\JpaUserDao.java
