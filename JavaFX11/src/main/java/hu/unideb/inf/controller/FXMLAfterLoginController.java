@@ -10,6 +10,7 @@ package hu.unideb.inf.controller;
         import javafx.scene.control.*;
         import javafx.scene.layout.Pane;
         import javafx.stage.Stage;
+        import org.hibernate.tool.schema.internal.exec.ScriptTargetOutputToFile;
 
         import java.net.URL;
         import java.sql.SQLException;
@@ -22,6 +23,9 @@ public class FXMLAfterLoginController implements Initializable {
     private Button addSearchedButton;
 
     @FXML
+    private Button DeleteButton;
+
+    @FXML
     private Button AddButton;
 
     @FXML
@@ -31,10 +35,13 @@ public class FXMLAfterLoginController implements Initializable {
     private Button addSearched;
 
     @FXML
-    private Button AddButton12;
+    private Button searchToDeleteButton;
 
     @FXML
     private Button searchButton;
+    
+    @FXML
+    private Button Logoutbutton;
 
     @FXML
     private TextField FilmDescription;
@@ -49,10 +56,22 @@ public class FXMLAfterLoginController implements Initializable {
     private TextField FilmName;
 
     @FXML
-    private Button Logoutbutton;
+    private TextField searchToDeleteText;
+
+    @FXML
+    private TextField FilmRelease;
+
+    @FXML
+    private TextField FilmLengthH;
+
+    @FXML
+    private TextField FilmLengthMin;
 
     @FXML
     private Label msg;
+
+    @FXML
+    private Label AddMovieErrorLabel;
 
     @FXML
     private Label msg1;
@@ -61,10 +80,26 @@ public class FXMLAfterLoginController implements Initializable {
     private Label userLabel;
 
     @FXML
-    public static Label staticUserLabel;
+    private Label seensumLabel;
+
+    @FXML
+    private Label stLabel;
 
     @FXML
     private Label searchLabel;
+
+    @FXML
+    private Label ErrorRegText;
+
+    @FXML
+    private Label searchToDeleteLabel;
+
+    @FXML
+    private Label DeleteDisplayLabel;
+
+
+    @FXML
+    public static Label staticUserLabel;
 
     @FXML
     private TabPane tabpane;
@@ -72,25 +107,30 @@ public class FXMLAfterLoginController implements Initializable {
     @FXML
     private Pane scenePane;
 
-
     @FXML
     private ListView<String> moveListDisplay;
+    
+    public static Movies lastSearched;
 
-    public static Movies lastSeached;
-
-
+    public FXMLAfterLoginController() {
+    }
 
     @FXML
-    void handleAddSearchedButton(ActionEvent event) {
+    void handleAddSearchedButton(ActionEvent event) throws SQLException, InterruptedException {
         System.out.println("ezeket adja hozza a relationshoz");
         System.out.println("user: "+User.currentUserName);
-        System.out.println("Movie: "+lastSeached.getTitle());
-        Relations relation = new Relations(User.currentUserName, lastSeached.getTitle());
-        Relations.addRelation(relation);
+        System.out.println("Movie: "+lastSearched.getTitle());
+        Relations relation = new Relations(User.currentUserName, lastSearched.getTitle());
+        int success = Relations.addRelation(relation);
+        if(success == 0 ) {
+            AddMovieErrorLabel.setVisible(true);
+        }
+        refreshList();
     }
 
     @FXML
     void handleSearchButton(ActionEvent event) throws SQLException {
+        AddMovieErrorLabel.setVisible(false);
         System.out.println("kereses megnyomva");
         Movies m = Movies.searchMovie(searchText.getText());
         if(m == null){
@@ -100,8 +140,9 @@ public class FXMLAfterLoginController implements Initializable {
         else{
             searchLabel.setText(m.getTitle());
 
-            lastSeached = m;
+            lastSearched = m;
             addSearchedButton.setVisible(true);
+
         }
     }
 
@@ -113,24 +154,136 @@ public class FXMLAfterLoginController implements Initializable {
         stage.close();
     }
 
+    private void refreshList(){
 
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        staticUserLabel = userLabel;
+        moveListDisplay.getItems().clear();
 
         List<String> seenMovies = null;
-        System.out.println("Neki kell hozzaadni: "+userLabel.getText());
         try {
             seenMovies = Relations.loadMovies(User.currentUserName);
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        System.out.println("Ezeket kell hozzaadni:");
-        
+        Movies.seensum = seenMovies.size();
         moveListDisplay.getItems().addAll(seenMovies);
+        setSeenSum();
+        try {
+            setScreenTime();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void setSeenSum(){
+        int value = 0;
+        value = Movies.seensum;
+        seensumLabel.setText(value+" filmet láttál eddig");
+    }
+
+    public void setScreenTime() throws SQLException {
+
+        int hvalue = 0;
+        int minvalue = 0;
+
+        List<Movies> osszes = Movies.getMovies();
+        List<String> seenMovies = Relations.loadMovies(User.currentUserName);
+
+        for(Movies m : osszes){
+            if(seenMovies.contains(m.getTitle())){
+
+                hvalue+=m.getLengthHour();
+                minvalue+=m.getLengthMin();
+            }
+        }
+
+        System.out.println(minvalue);
+
+        hvalue=Movies.calculateScreenTimeHour(hvalue,minvalue);
+        minvalue=Movies.calculateScreenTimeMin(hvalue,minvalue);
+        stLabel.setText(hvalue+" órát és "+minvalue+" percet töltöttél filmnézéssel");
+
+    }
+
+
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+
+        staticUserLabel = userLabel;
+
+        refreshList();
+
     }
 
     public void handleAddButton(ActionEvent actionEvent) {
 
+        System.out.println("Film hozzáadás gomb megnyomva");
+        System.out.println("Film cime: "+FilmName.getText());
+        System.out.println("Film mufaj: "+FilmGenre.getText());
+        System.out.println("Film hossz ora: "+FilmDescription.getText());
+        System.out.println("Film hossz perc: "+FilmLengthH.getText());
+        System.out.println("Film leiras: "+FilmLengthMin.getText());
+
+
+        int s = Movies.Movie_Register(FilmName.getText(),FilmGenre.getText(),
+                                    FilmRelease.getText(),
+                                    FilmLengthH.getText(),
+                                    FilmLengthMin.getText(),
+                                    FilmDescription.getText());
+
+        System.out.println(s);
+        switch(s){
+            case 0 :
+                System.out.println("Sikeres film regisztracio!");
+                ErrorRegText.setStyle("-fx-text-fill: green;");
+                ErrorRegText.setText("Sikeres film regisztáció!");
+                break;
+            case 1 :
+                System.out.println("Mar letezik ilyen film!");
+                ErrorRegText.setStyle("-fx-text-fill: red;");
+                ErrorRegText.setText("Már létezik ilyen film!");
+                break;
+            case 2:
+                System.out.println("Nem megfelelő formátumú adatok!");
+                ErrorRegText.setStyle("-fx-text-fill: red;");
+                ErrorRegText.setText("Nem megfelelő formátumú adatok!");
+                break;
+        }
+
+
     }
+
+    public void handleDeleteButton(ActionEvent actionEvent) throws SQLException {
+        System.out.println("torles megnyomva");
+        String title = searchToDeleteLabel.getText();
+        int s = Movies.deleteMovie(title);
+
+        switch(s){
+            case 0 :
+                System.out.println("Sikeres film torles!");
+                DeleteDisplayLabel.setStyle("-fx-text-fill: green;");
+                DeleteDisplayLabel.setText("Sikeres film törlés!");
+                break;
+            case 1 :
+                System.out.println("Sikertelen film torles!");
+                DeleteDisplayLabel.setStyle("-fx-text-fill: red;");
+                DeleteDisplayLabel.setText("Sikertelen film törlés!");
+                break;
+        }
+        refreshList();
+    }
+
+    public void handleSearchToDeleteButton(ActionEvent actionEvent) throws SQLException {
+        System.out.println("kereses torleshez megnyomva");
+
+        Movies m = Movies.searchMovie(searchToDeleteText.getText());
+        if(m == null){
+            searchToDeleteLabel.setText("Nincs ilyen film");
+            DeleteButton.setVisible(false);
+        }
+        else {
+            searchToDeleteLabel.setText(m.getTitle());
+            DeleteButton.setVisible(true);
+        }
+    }
+
 }

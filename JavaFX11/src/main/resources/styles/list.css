@@ -1,0 +1,15 @@
+
+.list-cell:filled {
+    -fx-background-color: #df8f38;
+    -fx-background-radius:25px;
+    -fx-border-radius:10px;
+    -fx-border-width:10px;
+    -fx-border-color:gray;
+}
+
+.list-cell{
+    -fx-background-color:gray;
+    -fx-padding: 10px;
+    -fx-margin: 10px;
+    -fx-background-radius: 10px;
+}

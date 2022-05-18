@@ -22,7 +22,7 @@ public class Relations {
         this.movie_Title = movieTitle;
     }
 
-    //Adott emberhez tartozó filmek listája
+    //Adott emberhez tartozó film címek listája
     public static List<String> loadMovies(String username) throws SQLException {
         List<String> r = new ArrayList<>();
 
@@ -36,17 +36,24 @@ public class Relations {
     }
 
     //új reláció
-    public static void addRelation(Relations r){
+    public static int addRelation(Relations r) throws SQLException {
+        int success = 1;
+        List<String> movlist = loadMovies(r.user_Name);
+        if(movlist.contains(r.movie_Title)){
+            success = 0;
+        }
+        else{
+            try (UserDAO uDAO = new JpaUserDao())
+            {
 
-        try (UserDAO uDAO = new JpaUserDao())
-        {
+                uDAO.saveRelation(r);
 
-            uDAO.saveRelation(r);
-
-        } catch (Exception e){
-            e.printStackTrace();
+            } catch (Exception e){
+                e.printStackTrace();
+            }
         }
 
+        return success;
     }
 
 

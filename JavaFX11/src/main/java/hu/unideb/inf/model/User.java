@@ -64,6 +64,36 @@ public class User {
         this.screentime = screentime;
     }
 
+    public static boolean checkName(String name){
+        boolean r = false;
+        if(name.length() > 5 && name.length() < 15){
+            char[] namearray = name.toCharArray();
+            for(char c : namearray){
+                if(Character.isLetter(c) == false && Character.isDigit(c) == false){
+                    r = true;
+                    System.out.println("Rossz felhasznalonev");
+                    break;
+                }
+            }
+
+        }
+        else{
+            r = true;
+        }
+
+
+
+        return r;
+    }
+
+    public static boolean checkPassword(String password) {
+        boolean r = false;
+        if(password.length() < 5 || password.length() > 15){
+            r = true;
+            System.out.println("Rossz jelszo");
+        }
+        return r;
+    }
 
     public static int User_Register(String name, String password)
     {
@@ -72,7 +102,7 @@ public class User {
                     // 1 = Már létezik ilyen felhasználó ,
                     // 2 = Nem megfelelő formátumú adatok
 
-        if(name.length() < 5 || password.length() < 8 || name.length() > 15 || password.length() > 15){
+        if(checkName(name) == true || checkPassword(password) == true){
             s = 2; //  --  nem megfelelő a formátum
         }
         else{
@@ -150,13 +180,25 @@ public class User {
         while (resultSet.next())
         {
             User user = new User();
+            int id = resultSet.getInt("id");
             String userName = resultSet.getString("userName");
             String password = resultSet.getString("password");
+            int seenSum = resultSet.getInt("SeenSum");
+            int screenTime = resultSet.getInt("ScreenTime");
             user.setUserName(userName);
             user.setPassword(password);
+            user.setScreentime(screenTime);
+            user.setSeensum(seenSum);
+            user.setId(id);
+
             Users.add(user);
         }
         return Users;
     }
+
+
+
+
+
 
 }
