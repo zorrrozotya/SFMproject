@@ -1,17 +1,20 @@
-# SFMproject
+--------------README--------------
 
-## Bevezetés
+Az alkalmazásnak nincs komolyabb rendszerkövetelménye. Az alkalmazást bármilyen korosztálynak ajánljuk, akik szeretik filmnézéssel tölteni az időd.
 
-## Github repo használata:
-A Trello táblát [itt](https://trello.com/b/n0FfYfjf/szoftver-fejleszt%C3%A9s) lehet megnézni. 
-1. letöltjük a repositoryt ```git clone https://github.com/zorrrozotya/SFMproject.git``` Frissítéshez: ```git pull``` parancs.
-2. A Trelloról kiválasztasz egy feladatot.
-3. Csinálsz egy új branchet a github felületén aminek a nevében benne van az adott kártya neve amit választottál pl.: ```feature/card-2-implement-proper-main-menu```.
-4. A terminálba ```git checkout "branch neve"``` azzal lépsz be az új branchbe és ezzel a parancsal is lehet visszalépni. 
-5. Megcsinálod a kódolást.
-6. kijelölöd a fájlokat amiket commitolni akarsz ```git add .```
-7. Commitolod a változtatásokat ```git commit -m "ide írd hogy milyen változtatások vannak a commitba vagy az adott kártya neve"```
-8. Feltölteni githubra ``` git push origin "branch neve"```
-9. A github felületén nyitsz egy új pull requestet és ha valaki elfogadja akkor lehet mergelni
-10. Saját branched legfrissebb masterre frissítése:
-  VS code editorban csináld hogy a conflict feloldás ne legyen szívás = beíroda a project mappájában a cmd-be hogy ```code .``` majd ```git checkout master``` majd ```git pull``` majd ```git checkout saját-branched``` majd ```git rebase -i master``` aztán bezárod a filet feloldod a conflictokat(accept incoming change)majd ```git add .``` és ```git rebase --continue``` és kész is van :D  Vagy kiadod ezt a parancsot mikor a saját brach-ben vagy ```git merge origin/master```.
+A Movie alkalmazással könnyedén tudjuk követni azt, hogy mennyi időt töltöttünk filmnézéssel, amelyet óra:perc-ben kapunk meg.
+Egyszerű regisztrációval létre is tudjuk hozni a felhasználónkat, majd bejelentkezés után ki is tudjuk választani a filmeket amelyeket láttunk.
+Regisztráció során a kis- és nagybetű "érzékeny", valamint a jelszónak minimum 8, de maximum 15 karakternek kell lennie, és a felhasználónév is maximum 15 karakter lehet.
+Amennyiben nem találjuk a kívánt filmet, a "Hozzáadás" fül alatt hozzá tudjuk adni azt, miután megadtunk az alkalmazásnak minden lényeges információt a filmről.
+Ha véletlenül rossz, vagy hibás filmet adtunk hozzá, az "Eltávolítás" fül alatt ezt el is távolíthatjuk.
+Minden adat folyamatosan mentve lesz, újbóli bejelentkezés után nem kell mindent újra beállítanunk.
+
+
+
+
+Létrehozta:
+
+Szabó Zsolt,
+Szücs Tamás,
+Kovács Zoltán,
+Jakab Szabolcs
